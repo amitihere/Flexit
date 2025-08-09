@@ -1,4 +1,4 @@
-# sports_app
+<!-- # sports_app
 1. Sports Slot Booking & Competition Finder
 
 
@@ -36,4 +36,4 @@ Additional Tools: Payment Gateway API
 A functional sports booking website that allows users to book slots seamlessly, discover local competitions, and register for them—all in one platform—improving convenience and participation in sports activities.
 
 9. Additional Notes (Optional)
-"The main challenge for this project is making a proper backend along with payment gateway."
+"The main challenge for this project is making a proper backend along with payment gateway." -->
