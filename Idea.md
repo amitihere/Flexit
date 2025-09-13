@@ -1,9 +1,7 @@
 <!-- # sports_app
 1. Sports Slot Booking & Competition Finder
 
-
 2. Amiti Aneesh – 2024-B-05062007
-
 
 3. Problem Statement-
 Booking available sports slots can become frustrating due to double bookings, and lack of real-time updates. Additionally, many players miss out on local sports competitions simply because they are not aware of them. This project is aiming to make slot booking for sports easy, while also helping players discover and participate in nearby competitions.
