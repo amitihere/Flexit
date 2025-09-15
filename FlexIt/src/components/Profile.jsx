@@ -24,6 +24,16 @@ export default function Profile() {
 
   return (
     <View>
+        <Image
+        source={require("./istockphoto-1393750072-612x612.jpg")}
+        style={{ width: 100, height: 100, borderRadius: 50 }}
+      />
+      <Text>
+        {name ? `Name: ${name}` : "No Name Found"}
+      </Text>
+      <Text style={{ fontSize: 16, color: 'grey' }}>
+        {pass ? `Password: ${pass}` : "No Password Found"}
+      </Text>
     </View>
   )
 }
