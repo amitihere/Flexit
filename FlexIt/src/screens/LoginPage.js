@@ -6,7 +6,7 @@ export default function LoginPage({setIsLoggedIn}){
     const [saved,setSaved] = useState('')
     const [name,setName] = useState('')
     const [pass,setPass] = useState('')
-    const [status,setStatus] = useState(false)
+    const [status,setStatus] = useState(true)
     useEffect(()=>{
         let loader = async ()=>{
             let data = await AsyncStorage.getItem(name)
