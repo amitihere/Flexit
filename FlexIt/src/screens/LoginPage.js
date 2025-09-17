@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import {View,Text,TextInput,Button,StyleSheet,ScrollView} from 'react-native'
+import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function LoginPage({setIsLoggedIn}){
@@ -35,34 +35,36 @@ export default function LoginPage({setIsLoggedIn}){
         
     }
   return (
-    <View style={styles.container}>
-        <View style={styles.box}>
-            <Text style={{margin:5,fontWeight:'bold',fontSize:20}}>
-                {status?'Login':`Sign Up`}
-            </Text>
-            <Text style={styles.initial}>
-                Username:
-            </Text>
-            <TextInput 
-            placeholder='Enter your name'
-            style={styles.type}
-            value={name}
-            onChangeText={setName}
-            />
-            <Text style={styles.initial}>
-                Password:
-            </Text>
-            <TextInput 
-            placeholder='Password'
-            style={styles.type}
-            secureTextEntry={true}
-            onChangeText={setPass}
-            value={pass}
-            />
-            <Button title={status?'Login':'Sign up'} onPress={handleSave}/>
-            {status   && <Text>Don't have a account? <Text style={{color:"blue"}} onPress={()=>{setStatus(false)}}>Sign up</Text></Text>}
+    <ImageBackground source={require('../../assets/Gemini_Generated_Image_b2ecoib2ecoib2ec.png')} style={{flex:1,width:'100%',height:'100%'}} resizeMode='cover'>
+        <View style={styles.container}>
+            <View style={styles.box}>
+                <Text style={{margin:5,fontWeight:'bold',fontSize:20}}>
+                    {status?'Login':`Sign Up`}
+                </Text>
+                <Text style={styles.initial}>
+                    Username:
+                </Text>
+                <TextInput 
+                placeholder='Enter your name'
+                style={styles.type}
+                value={name}
+                onChangeText={setName}
+                />
+                <Text style={styles.initial}>
+                    Password:
+                </Text>
+                <TextInput 
+                placeholder='Password'
+                style={styles.type}
+                secureTextEntry={true}
+                onChangeText={setPass}
+                value={pass}
+                />
+                <Button title={status?'Login':'Sign up'} onPress={handleSave}/>
+                {status   && <Text>Don't have a account? <Text style={{color:"blue"}} onPress={()=>{setStatus(false)}}>Sign up</Text></Text>}
+            </View>
         </View>
-    </View>
+    </ImageBackground>
   )
 }
 const styles = StyleSheet.create({
