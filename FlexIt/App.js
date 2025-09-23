@@ -7,10 +7,10 @@ import Competition from './src/screens/Competition'
 import Sports from './src/screens/Sports'
 import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
-
+import { Ionicons } from '@expo/vector-icons';
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   // useEffect(() => {
   //   const checkLogin = async () => {
@@ -26,9 +26,24 @@ export default function App() {
       <Tab.Navigator>
         {isLoggedIn ? (
           <>
-            <Tab.Screen name="Home" component={Home} options={{headerShown:false}}/>
-            <Tab.Screen name="Competition" component={Competition} />
-            <Tab.Screen name="Sports" component={Sports} />
+            <Tab.Screen name="home" component={Home} options={{
+              title: 'FlexIt',
+              tabBarLabel:'Home',
+              tabBarIcon: () => (
+                <Ionicons name="home-outline" color="black" size={20}/>
+              ),
+              headerStyle: {
+                backgroundColor: '#f8f9fa',
+              },
+              headerTitleStyle: {
+                fontSize:30,
+                color:'maroon',
+                fontWeight:'bold'
+              },
+            }}/>
+            <Tab.Screen name="Competition" component={Competition} options={{headerShown: false,
+              tabBarLabel:'Competition',tabBarIcon: ()=>(<Ionicons name='fast'/>)}}/>
+            <Tab.Screen name="Sports" component={Sports} options={{}}/>
             <Tab.Screen name="About" component={About} />
           </>
         ) : (

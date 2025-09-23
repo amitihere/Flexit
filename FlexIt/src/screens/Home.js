@@ -4,9 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Profile from '../components/Profile';
 export default function Home(){
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <Text style={styles.icon}>FlexIt</Text>
+    <ScrollView>
         {/* <Profile/> */}
         <View style={styles.container}>
           <View style={[styles.comp]}>
@@ -28,8 +26,7 @@ export default function Home(){
           <View style={styles.book}>
           </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+    </ScrollView>
     
   )
 }
@@ -38,11 +35,6 @@ const styles = StyleSheet.create({
     backgroundColor:'#f8f9fa',
     height:'100%',
     width:'100%',
-  },
-  icon: {
-    fontSize:40,
-    color:'green',
-    fontWeight:'bold'
   },
   row: {
     flexDirection: 'row',
