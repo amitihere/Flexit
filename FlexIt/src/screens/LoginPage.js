@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground} from 'react-native'
+import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground,TouchableOpacity} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function LoginPage({setIsLoggedIn}){
@@ -71,7 +71,9 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        opacity: 0.8
     },
     box: {
         width: 280,

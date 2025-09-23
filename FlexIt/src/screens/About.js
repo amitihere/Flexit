@@ -1,7 +1,12 @@
 import React from 'react'
-import {View,Text,StyleSheet} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import Profile from '../components/Profile';
-export default function Home(){
-    
+import {View,Text} from 'react-native';
+
+export default function About(){
+  return (
+    <View>
+        <Text>
+            About vochesindi
+        </Text>
+    </View>
+  )
 }

@@ -10,7 +10,7 @@ import About from "./src/screens/About"
 
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // useEffect(() => {
   //   const checkLogin = async () => {
