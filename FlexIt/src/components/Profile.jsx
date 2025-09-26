@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Profile() {
@@ -23,7 +23,7 @@ export default function Profile() {
   }, [])
 
   return (
-    <View>
+    <View style={styles.container}>
         <Image
         source={require("./istockphoto-1393750072-612x612.jpg")}
         style={{ width: 100, height: 100, borderRadius: 50 }}
@@ -37,3 +37,10 @@ export default function Profile() {
     </View>
   )
 }
+const styles = StyleSheet.create({
+  container: {
+    justifyContent:'center',
+    alignItems:'center',
+    gap:2
+  }
+})

@@ -1,13 +1,15 @@
 import React from 'react'
 import {View,Text,ScrollView,StyleSheet} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Profile from '../components/Profile';
 
 export default function About(){
   return (
     <SafeAreaView>
       <ScrollView>
+        
         <View style={styles.container}>
-          <Text>About LoginPage</Text>
+          <Profile/>
           <View style={styles.cards}>
 
             <View style={styles.inside}>
