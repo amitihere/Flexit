@@ -10,7 +10,7 @@ import About from "./src/screens/About"
 import { Ionicons } from '@expo/vector-icons';
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   // useEffect(() => {
   //   const checkLogin = async () => {
@@ -58,7 +58,12 @@ export default function App() {
                 fontWeight:'bold'
               },
             }}/>
-            <Tab.Screen name="Sports" component={Sports} options={{}}/>
+            <Tab.Screen name="Sports" component={Sports} options={{
+              headerShown: false,
+              tabBarIcon: () => (
+                <Ionicons name="umbrella" color="black" size={20}/>
+              )
+            }}/>
 
             <Tab.Screen name="About" component={About} options={{
               tabBarLabel:'About',
