@@ -26,6 +26,7 @@ export default function App() {
       <Tab.Navigator>
         {isLoggedIn ? (
           <>
+
             <Tab.Screen name="home" component={Home} options={{
               title: 'FlexIt',
               tabBarLabel:'Home',
@@ -41,10 +42,32 @@ export default function App() {
                 fontWeight:'bold'
               },
             }}/>
-            <Tab.Screen name="Competition" component={Competition} options={{headerShown: false,
-              tabBarLabel:'Competition',tabBarIcon: ()=>(<Ionicons name='fast'/>)}}/>
+
+            <Tab.Screen name="Competition" component={Competition} options={{
+              title: 'FlexIt',
+              tabBarLabel:'Competition',
+              tabBarIcon: () => (
+                <Ionicons name="" color="black" size={20}/>
+              ),
+              headerStyle: {
+                backgroundColor: '#f8f9fa',
+              },
+              headerTitleStyle: {
+                fontSize:30,
+                color:'maroon',
+                fontWeight:'bold'
+              },
+            }}/>
             <Tab.Screen name="Sports" component={Sports} options={{}}/>
-            <Tab.Screen name="About" component={About} />
+
+            <Tab.Screen name="About" component={About} options={{
+              tabBarLabel:'About',
+              headerShown: false,
+              tabBarIcon: () => (
+                <Ionicons name="person" color="black" size={20}/>
+              )
+            }}/>
+
           </>
         ) : (
           <Tab.Screen name="." options={{

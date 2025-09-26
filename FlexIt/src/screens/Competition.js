@@ -3,15 +3,15 @@ import {View,Text,ScrollView,StyleSheet,TextInput,Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 export default function Competition(){
   return (
-    <SafeAreaView>
       <ScrollView>
         <View style={styles.container}>
-          <View style={styles.main}>
-            <TextInput style={styles.input} placeholder='Type the sport you wanna compete!!'/>
-          </View>
+          <TextInput style={styles.input} placeholder='Type the sport you wanna compete!!'/>
+
+
           <View style={{flex:1,justifyContent:'center',alignItems:'center',marginTop:10}}>
             <Text>- Select the venue you are intrested in -</Text>
           </View>
+
           <View style={styles.cards}>
             <View style={styles.comp}>
               <Text style={styles.title}>
@@ -40,7 +40,6 @@ export default function Competition(){
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
   )
 }
 const styles = StyleSheet.create({
@@ -48,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#f8f9fa',
     height:'100%',
     width:'100%',
+    gap:10
   },
   main:{
     backgroundColor:'#f0f0f0',
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
     textAlign:'center',
     alignSelf:'center',
     color:'maroon',
-    borderRadius:10
+    borderRadius:10,
+    marginTop:15
   },
   cards: {
     flexDirection: 'column',
@@ -108,13 +109,13 @@ const styles = StyleSheet.create({
   },
 
 row: {
-  flexDirection: 'row',       // horizontal layout
-  alignItems: 'flex-start',   // align text and image at the top
+  flexDirection: 'row',
+  alignItems: 'flex-start',
   justifyContent: 'space-between',
 },
 
 textBlock: {
-  flex: 1,                    // text takes remaining width
+  flex: 1,
   paddingRight: 10,
 },
 })
