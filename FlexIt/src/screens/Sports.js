@@ -1,8 +1,17 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {View,Text,ScrollView,StyleSheet} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { generateDates } from '../storage/Date';
 
 export default function Sports(){
+  const [slot,setSlot] = useState([])
+  useEffect(()=> {
+    let arr = generateDates(10)
+    if(arr.length>0){
+      setSlot(arr)
+    }
+    
+  },[])
   return (
     <SafeAreaView>
       <ScrollView>
@@ -11,34 +20,12 @@ export default function Sports(){
                 Select the Date :)
             </Text>
             <ScrollView horizontal>
-              <View style={styles.card}>
-                <Text style={styles.text}>26</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Tue</Text>
+              {slot.map((data,index)=>(
+                <View style={styles.card}>
+                  <Text style={styles.text}>{data[0]}</Text>
+                  <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>{data[1]}</Text>
               </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>27</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Wed</Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>28</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Thu</Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>29</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Fri</Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>30</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Sat</Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>31</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Sun</Text>
-              </View>
-              <View style={styles.card}>
-                <Text style={styles.text}>01</Text>
-                <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>Mon</Text>
-              </View>
+              ))}
             </ScrollView>
         </View>
       </ScrollView>
