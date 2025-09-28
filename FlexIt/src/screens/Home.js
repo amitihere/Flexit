@@ -36,13 +36,16 @@ export default function Home(){
                 <Image source={require('../../assets/image copy 2.png')} style={{ width: 180, height: 150, borderRadius: 10 }}/>
             </View>
 
-            <View style={styles.book}>
+            <View style={[styles.book,{justifyContent:'space-between',height:280}]}>
               <View>
-                  <Text>Book your slots for your favourite game</Text>
+                <Image source={require('../../assets/image copy 3.png')} style={{ width: 180, height: 180, borderRadius: 5 }}/>
+              </View>
+              <View style={{width:140,marginBottom:20}}>
+                <Text style={{textAlign:'center'}}>Participate in your favourite sports competitions</Text>
               </View>
             </View>
           </View>
-          <View style={styles.book}>
+          <View>
           </View>
         </View>
     </ScrollView>
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#f0f0f0',
-    height: 400,
+    height: 330,
     width: 180,
     borderRadius: 30,
     marginTop: 30,
