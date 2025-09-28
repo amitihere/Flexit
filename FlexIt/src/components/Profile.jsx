@@ -25,7 +25,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
         <Image
-        source={require("./istockphoto-1393750072-612x612.jpg")}
+        source={require("../../assets/istockphoto-1393750072-612x612.jpg")}
         style={{ width: 100, height: 100, borderRadius: 50 }}
       />
       <Text>
