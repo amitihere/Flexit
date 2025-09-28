@@ -47,7 +47,7 @@ export default function App() {
               title: 'FlexIt',
               tabBarLabel:'Competition',
               tabBarIcon: () => (
-                <Ionicons name="" color="black" size={20}/>
+                <Ionicons name="trophy-outline" color="black" size={20}/>
               ),
               headerStyle: {
                 backgroundColor: '#f8f9fa',
@@ -61,7 +61,7 @@ export default function App() {
             <Tab.Screen name="Sports" component={Sports} options={{
               headerShown: false,
               tabBarIcon: () => (
-                <Ionicons name="umbrella" color="black" size={20}/>
+                <Ionicons name="calendar-clear-outline" color="black" size={20}/>
               )
             }}/>
 
@@ -69,7 +69,7 @@ export default function App() {
               tabBarLabel:'About',
               headerShown: false,
               tabBarIcon: () => (
-                <Ionicons name="person" color="black" size={20}/>
+                <Ionicons name="person-outline" color="black" size={20}/>
               )
             }}/>
 

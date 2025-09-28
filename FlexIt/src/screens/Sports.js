@@ -19,9 +19,9 @@ export default function Sports(){
             <Text style={styles.head}>
                 Select the Date :)
             </Text>
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {slot.map((data,index)=>(
-                <View style={styles.card}>
+                <View style={styles.card} key={index}>
                   <Text style={styles.text}>{data[0]}</Text>
                   <Text style={[styles.text,{fontSize:19,color:'maroon'}]}>{data[1]}</Text>
               </View>
