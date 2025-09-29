@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/screens/Home'
 import Competition from './src/screens/Competition'
 import Sports from './src/screens/Sports'
 import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
 import { Ionicons } from '@expo/vector-icons';
-export default function App() {
+import Admin from "./src/screens/Admin";
   const Tab = createBottomTabNavigator();
+  const Stack = createStackNavigator();
+function BottomTabs() {
+  
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   // useEffect(() => {
@@ -22,7 +26,6 @@ export default function App() {
   //   checkLogin();
   // }, []);
   return (
-    <NavigationContainer>
       <Tab.Navigator>
         {isLoggedIn ? (
           <>
@@ -82,10 +85,18 @@ export default function App() {
           </Tab.Screen>
         )}
       </Tab.Navigator>
+  );
+}
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="MainTabs" component={BottomTabs} />
+        <Stack.Screen name="Admin" component={Admin} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

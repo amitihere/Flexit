@@ -1,9 +1,11 @@
 import React from 'react'
-import {View,Text,ScrollView,StyleSheet} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Profile from '../components/Profile';
+import { useNavigation } from '@react-navigation/native';
 
 export default function About(){
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <ScrollView>
@@ -12,44 +14,49 @@ export default function About(){
           <Profile/>
           <View style={styles.cards}>
 
-            <View style={styles.inside}>
+            <TouchableOpacity style={styles.inside}>
               <Text style={styles.text}>My Bookings</Text>
               <Text>View Transactions & Receipts</Text>
               <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
+            </TouchableOpacity>
 
-            <View style={styles.inside}>
+            <TouchableOpacity style={styles.inside}>
               <Text style={styles.text}>Preferences & Privacy</Text>
               <Text>Sports Rules, Notifications, Loactions, etc..</Text>
               <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
+            </TouchableOpacity>
 
-            <View style={styles.inside}>
+            <TouchableOpacity style={styles.inside}>
               <Text style={styles.text}>Competitions Rule</Text>
               <Text>Competition Rules, Regulations, Permissions</Text>
               <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.cards}>
-            <View style={styles.inside}>
-                <Text style={styles.text}>Contact FlexIt</Text>
+            <TouchableOpacity style={styles.inside} onPress={()=> navigation.navigate('Admin')}>
+                <Text style={styles.text}>Admin</Text>
                 <Text>Add Sports Club with us.</Text>
+                <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 5}} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.inside}>
+                <Text style={styles.text}>Contact FlexIt</Text>
+                <Text>Contact for any queries</Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
-            <View style={styles.inside}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.inside}>
                 <Text style={styles.text}>Discounts %</Text>
                 <Text>Check the discounts for the sports</Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
-            <View style={styles.inside}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.inside}>
                 <Text style={styles.text}>Invite & Earn</Text>
                 <Text>Refer your friend and get discounts </Text>
-                <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </View>
-            <View style={styles.inside}>
-                <Text style={styles.text}>logout ~ </Text>
-            </View>
+                <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 5}} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.inside}>
+                <Text style={[styles.text,{paddingBottom:10}]}>logout ~ </Text>
+            </TouchableOpacity>
           </View>
           
         </View>
@@ -76,7 +83,9 @@ const styles = StyleSheet.create({
     gap:10
   },
   text: {
-    fontSize:24
+    fontSize:20,
+    textAlign:'center',
+    marginBottom:5
   },
   inside: {
     justifyContent:'center',
