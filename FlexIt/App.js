@@ -95,6 +95,7 @@ export default function App() {
         <Stack.Screen name="MainTabs" component={BottomTabs} />
         <Stack.Screen name="Admin" component={Admin} />
         <Stack.Screen name="AddVenue" component={AddVenue} />
+        <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );

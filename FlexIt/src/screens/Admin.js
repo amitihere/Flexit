@@ -3,12 +3,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import {View,Text,ScrollView,StyleSheet,TouchableOpacity} from 'react-native';
 import AdminRules from '../Data/AdminRules';
 import { useNavigation } from '@react-navigation/native';
-
+import { Appbar } from 'react-native-paper';
 export default function Admin (){
     const rules = AdminRules()
     const navigation = useNavigation();
   return (
+    
     <SafeAreaView>
+        <Appbar.BackAction onPress={() => navigation.navigate('About')} />
         <ScrollView>
             <View style={styles.container}>
                 <Text style={styles.head}>Welcome to the <Text style={{color:'maroon',fontSize:40}}>Admin</Text> ~page~</Text>
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop:50
+    marginTop:10
   },
   head: {
     fontSize:30,
