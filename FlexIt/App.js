@@ -10,21 +10,22 @@ import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
 import { Ionicons } from '@expo/vector-icons';
 import Admin from "./src/screens/Admin";
+import AddVenue from "./src/Data/AddVenue";
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 function BottomTabs() {
   
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-  // useEffect(() => {
-  //   const checkLogin = async () => {
-  //     const user = await AsyncStorage.getItem("username");
-  //     if (user) {
-  //       setIsLoggedIn(true);
-  //     }
-  //   };
-  //   checkLogin();
-  // }, []);
+  useEffect(() => {
+    const checkLogin = async () => {
+      const user = await AsyncStorage.getItem("username");
+      if (user) {
+        setIsLoggedIn(true);
+      }
+    };
+    checkLogin();
+  }, []);
   return (
       <Tab.Navigator>
         {isLoggedIn ? (
@@ -93,6 +94,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainTabs" component={BottomTabs} />
         <Stack.Screen name="Admin" component={Admin} />
+        <Stack.Screen name="AddVenue" component={AddVenue} />
       </Stack.Navigator>
     </NavigationContainer>
   );
