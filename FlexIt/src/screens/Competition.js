@@ -1,43 +1,84 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {View,Text,ScrollView,StyleSheet,TextInput,Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import CompData from '../Data/CompData';
 export default function Competition(){
+  const [name,setName] = useState('')
+  const comp = CompData()
+  const handleName = comp.filter((t)=> t.title.toLowerCase().trim().includes(name.toLowerCase().trim()))
   return (
       <ScrollView>
         <View style={styles.container}>
-          <TextInput style={styles.input} placeholder='Type the sport you wanna compete!!'/>
-
-
+          <TextInput style={styles.input} placeholder='Type the sport you wanna compete!!' onChangeText={setName}/>
           <View style={{flex:1,justifyContent:'center',alignItems:'center',marginTop:10}}>
             <Text>- Select the venue you are intrested in -</Text>
           </View>
+          {name ? (
+            handleName.map((data,index)=>(
+              <View key={index}>
+                  <View style={styles.cards}>
+                    <View style={styles.comp}>
+                      <Text style={styles.title}>
+                        Title: {data.title}
+                      </Text>
+                      <Text style={styles.prize}>
+                        Prize pool: <Text style={{fontSize:22,color:'green'}}>{data.prize}</Text>
+                      </Text>
 
-          <View style={styles.cards}>
-            <View style={styles.comp}>
-              <Text style={styles.title}>
-                Title: Table Tennis sports is here
-              </Text>
-              <Text style={styles.prize}>
-                Prize pool: <Text style={{fontSize:22,color:'green'}}>20000</Text>
-              </Text>
-              <Text style={styles.dead}>
-                apply before: ~ 4th June
-              </Text>
-              <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
-                this sport is to everyone 
-              </Text></Text>
-              <View style={{flex:1,justifyContent:'flex-end'}}>
-                <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
-                  Read terms and conditions
-                </Text>
+                      <Text style={styles.dead}>
+                        apply before: ~ {data.apply}
+                      </Text>
+
+                      <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
+                        {data.eligibility}
+                      </Text></Text>
+
+                      <View style={{flex:1,justifyContent:'flex-end'}}>
+                        <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
+                          Read terms and conditions
+                        </Text>
+
+                      </View>
+                      
+                    </View>
+                  </View>
               </View>
-              
-            </View>
-            
-            <View style={styles.comp}></View>
-            <View style={styles.comp}></View>
-            <View style={styles.comp}></View>
-          </View>
+            )
+          ))
+          :
+          (comp.map((data,index)=>(
+              <View key={index}>
+                  <View style={styles.cards}>
+                    <View style={styles.comp}>
+                      <Text style={styles.title}>
+                        Title: {data.title}
+                      </Text>
+                      <Text style={styles.prize}>
+                        Prize pool: <Text style={{fontSize:22,color:'green'}}>{data.prize}</Text>
+                      </Text>
+
+                      <Text style={styles.dead}>
+                        apply before: ~ {data.apply}
+                      </Text>
+
+                      <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
+                        {data.eligibility}
+                      </Text></Text>
+
+                      <View style={{flex:1,justifyContent:'flex-end'}}>
+                        <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
+                          Read terms and conditions
+                        </Text>
+
+                      </View>
+                      
+                    </View>
+                  </View>
+              </View>
+            )
+          ))}
+          
+          
         </View>
       </ScrollView>
   )
