@@ -7,7 +7,7 @@ export default function AddVenue () {
     const navigation = useNavigation();
   return (
     <Appbar.Header>
-      <Appbar.BackAction onPress={() => navigation.navigate('Admin')} />
+      <Appbar.BackAction onPress={() => navigation.goBack()} />
         <Appbar.Content title="Add Venue" />
     </Appbar.Header>
   )

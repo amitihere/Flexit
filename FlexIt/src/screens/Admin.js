@@ -10,7 +10,7 @@ export default function Admin (){
   return (
     
     <SafeAreaView>
-        <Appbar.BackAction onPress={() => navigation.navigate('About')} />
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
         <ScrollView>
             <View style={styles.container}>
                 <Text style={styles.head}>Welcome to the <Text style={{color:'maroon',fontSize:40}}>Admin</Text> ~page~</Text>
