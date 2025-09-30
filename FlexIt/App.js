@@ -15,7 +15,7 @@ import AddVenue from "./src/Data/AddVenue";
   const Stack = createStackNavigator();
 function BottomTabs() {
   
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const checkLogin = async () => {
