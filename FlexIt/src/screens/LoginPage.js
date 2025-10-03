@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         backgroundColor: 'rgba(0,0,0,0.5)',
-        opacity: 0.8
+        opacity: 0.5
     },
     box: {
         width: 280,
