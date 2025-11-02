@@ -11,11 +11,15 @@ import About from "./src/screens/About"
 import { Ionicons } from '@expo/vector-icons';
 import Admin from "./src/screens/Admin";
 import AddVenue from "./src/Data/AddVenue";
+import { House } from 'lucide-react-native';
+import { Trophy } from 'lucide-react-native';
+import { CalendarCheck } from 'lucide-react-native';
+import { User } from 'lucide-react-native';
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 function BottomTabs() {
   
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     const checkLogin = async () => {
@@ -27,7 +31,16 @@ function BottomTabs() {
     checkLogin();
   }, []);
   return (
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarLabelStyle: { fontSize: 12 },
+          tabBarActiveTintColor: "#6f6f58ff",
+          tabBarInactiveTintColor: "#96986dff",
+          tabBarStyle: {
+            backgroundColor: "#111111ff",
+          },
+        }}
+      >
         {isLoggedIn ? (
           <>
 
@@ -35,7 +48,7 @@ function BottomTabs() {
               title: 'FlexIt',
               tabBarLabel:'Home',
               tabBarIcon: () => (
-                <Ionicons name="home-outline" color="black" size={20}/>
+                <House color="#96986dff" size={24} />
               ),
               headerStyle: {
                 backgroundColor: '#f8f9fa',
@@ -51,7 +64,7 @@ function BottomTabs() {
               title: 'FlexIt',
               tabBarLabel:'Competition',
               tabBarIcon: () => (
-                <Ionicons name="trophy-outline" color="black" size={20}/>
+                <Trophy color="#96986dff" size={24} />
               ),
               headerStyle: {
                 backgroundColor: '#f8f9fa',
@@ -65,7 +78,7 @@ function BottomTabs() {
             <Tab.Screen name="Sports" component={Sports} options={{
               headerShown: false,
               tabBarIcon: () => (
-                <Ionicons name="calendar-clear-outline" color="black" size={20}/>
+                <CalendarCheck color="#96986dff" size={24} />
               )
             }}/>
 
@@ -73,7 +86,7 @@ function BottomTabs() {
               tabBarLabel:'About',
               headerShown: false,
               tabBarIcon: () => (
-                <Ionicons name="person-outline" color="black" size={20}/>
+                <User color="#96986dff" size={24}/>
               )
             }}/>
 
