@@ -8,7 +8,6 @@ import Competition from './src/screens/Competition'
 import Sports from './src/screens/Sports'
 import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
-import { Ionicons } from '@expo/vector-icons';
 import Admin from "./src/screens/Admin";
 import AddVenue from "./src/Data/AddVenue";
 import { House } from 'lucide-react-native';
@@ -45,35 +44,17 @@ function BottomTabs() {
           <>
 
             <Tab.Screen name="home" component={Home} options={{
-              title: 'FlexIt',
-              tabBarLabel:'Home',
+              headerShown: false,
               tabBarIcon: () => (
                 <House color="#96986dff" size={24} />
               ),
-              headerStyle: {
-                backgroundColor: '#f8f9fa',
-              },
-              headerTitleStyle: {
-                fontSize:30,
-                color:'maroon',
-                fontWeight:'bold'
-              },
             }}/>
 
             <Tab.Screen name="Competition" component={Competition} options={{
-              title: 'FlexIt',
-              tabBarLabel:'Competition',
+              headerShown: false,
               tabBarIcon: () => (
                 <Trophy color="#96986dff" size={24} />
-              ),
-              headerStyle: {
-                backgroundColor: '#f8f9fa',
-              },
-              headerTitleStyle: {
-                fontSize:30,
-                color:'maroon',
-                fontWeight:'bold'
-              },
+              )
             }}/>
             <Tab.Screen name="Sports" component={Sports} options={{
               headerShown: false,

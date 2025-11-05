@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import CompButton from '../Extras/CompButton';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 export default function Home(){
 
   const navigation = useNavigation()
@@ -15,40 +16,49 @@ export default function Home(){
   }
 
   return (
+    
+      <LinearGradient
+                colors={['#141515ff', '#343635ff']}
+                style={styles.container}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+        >
+        <SafeAreaView>
+        <ScrollView>
+            <View style={styles.container}>
+              
+              <TouchableOpacity  onPress={handleSlot}>
+                <View style={[styles.comp]}>
+                    <Image source={require('../../assets/image copy.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
+                    <Image source={require('../../assets/image.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
+                </View>
+              </TouchableOpacity>
 
-    <ScrollView>
-        <View style={styles.container}>
-          
-          <TouchableOpacity  onPress={handleSlot}>
-            <View style={[styles.comp]}>
-                <Image source={require('../../assets/image copy.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
-                <Image source={require('../../assets/image.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
-            </View>
-          </TouchableOpacity>
+              <View style={styles.row}>
 
-          <View style={styles.row}>
+                <View style={styles.book}>
+                    <CompButton/>
+                    <TouchableOpacity onPress={handleComp}>
+                      <Ionicons name="arrow-forward-outline" color="black" size={60}/>
+                    </TouchableOpacity>
+                    <Image source={require('../../assets/image copy 2.png')} style={{ width: 180, height: 150, borderRadius: 10 }}/>
+                </View>
 
-            <View style={styles.book}>
-                <CompButton/>
-                <TouchableOpacity onPress={handleComp}>
-                  <Ionicons name="arrow-forward-outline" color="black" size={60}/>
-                </TouchableOpacity>
-                <Image source={require('../../assets/image copy 2.png')} style={{ width: 180, height: 150, borderRadius: 10 }}/>
-            </View>
-
-            <View style={[styles.book,{justifyContent:'space-between',height:280}]}>
+                <View style={[styles.book,{justifyContent:'space-between',height:280}]}>
+                  <View>
+                    <Image source={require('../../assets/image copy 3.png')} style={{ width: 180, height: 180, borderRadius: 5 }}/>
+                  </View>
+                  <View style={{width:140,marginBottom:20}}>
+                    <Text style={{textAlign:'center'}}>Participate in your favourite sports competitions</Text>
+                  </View>
+                </View>
+              </View>
               <View>
-                <Image source={require('../../assets/image copy 3.png')} style={{ width: 180, height: 180, borderRadius: 5 }}/>
-              </View>
-              <View style={{width:140,marginBottom:20}}>
-                <Text style={{textAlign:'center'}}>Participate in your favourite sports competitions</Text>
               </View>
             </View>
-          </View>
-          <View>
-          </View>
-        </View>
-    </ScrollView>
+        </ScrollView>
+        </SafeAreaView>
+      </LinearGradient>
     
   )
 }
@@ -58,10 +68,9 @@ export default function Home(){
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:'#f8f9fa',
     height:'100%',
     width:'100%',
-    alignItems:'center'
+    alignItems:'center',
   },
   row: {
     flexDirection: 'row',
