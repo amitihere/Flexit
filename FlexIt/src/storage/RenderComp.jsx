@@ -5,64 +5,62 @@ export const CompContext = React.createContext();
 export default function RenderComp(){
     const DATA = CompData();
     const {name,setName,handleName} = React.useContext(CompContext);
-    console.log(name);
+    
+
   return (
         <FlatList
         data={name ? handleName : DATA}
         renderItem={({item})=> <Item product = {item}/>}
         keyExtractor={(item)=>item.id}
+        showsVerticalScrollIndicator={false}
         />
   )
 }
-const Item = ({product})=> (
-    <View key={product.id}>
-        <View style={styles.cards}>
+const Item = ({product})=> {
+  const images = {
+      badminton: require('../../assets/Badminton-pana.webp'),
+    };
+    return (
+        <View style={styles.cards} key={product.id}>
              <View style={styles.comp}>
-                <Text style={styles.title}>
-                    Title: {product.title}
-                </Text>
-                <Text style={styles.prize}>
-                    Prize pool: <Text style={{fontSize:22,color:'green'}}>{product.prize}</Text>
-                </Text>
-    
-                <Text style={styles.dead}>
-                    apply before: ~ {product.apply}
-                </Text>
-                <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
-                    {product.eligibility}
-                    </Text>
-                </Text>
-    
-                <View style={{flex:1,justifyContent:'flex-end'}}>
-                    <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
-                        Read terms and conditions
-                    </Text>
-    
-                </View>
-                          
+                
+              <Image source={require('../../assets/abstract-background-waves-banner-medium-600nw-2407191051.webp')} style={styles.image} />
+              <View style={styles.overlay}>
+                <Image source={images[product.src]} style={{height:100,width:200}}/>
+              </View>
             </View>
         </View>
-    </View>
 
-)
+  )}
 const styles = StyleSheet.create({
     cards: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent:'space-evenly',
-    gap:18,
+    marginBottom:10,
     marginTop:15
   },
   comp: {
-    flex:1,
+    flex: 1,
     justifyContent: 'flex-start',
-    alignContent:'center',
-    borderWidth:1,
-    borderColor:'#f0f0f0',
-    height:200,
-    width:'96%',
-    borderRadius:30,
-    backgroundColor:'#f0f0f0'
+    alignItems: 'center',
+    height: 200,
+    width: 400,
+    borderRadius: 26,
+    backgroundColor: '#f0f0f0',
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 26,
+  },
+  overlay: {
+    position: 'absolute',
+    left: 10,
+    top: '20%',
+
+    alignItems: 'flex-start',
   },
   title: {
     textAlign:'center',
@@ -90,3 +88,25 @@ const styles = StyleSheet.create({
     marginTop:18
   },
 })
+
+{/* <Text style={styles.title}>
+                    Title: {product.title}
+                </Text>
+                <Text style={styles.prize}>
+                    Prize pool: <Text style={{fontSize:22,color:'green'}}>{product.prize}</Text>
+                </Text>
+    
+                <Text style={styles.dead}>
+                    apply before: ~ {product.apply}
+                </Text>
+                <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
+                    {product.eligibility}
+                    </Text>
+                </Text>
+    
+                <View style={{flex:1,justifyContent:'flex-end'}}>
+                    <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
+                        Read terms and conditions
+                    </Text>
+    
+                </View> */}

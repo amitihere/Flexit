@@ -17,18 +17,19 @@ export default function Competition(){
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-          <SafeAreaView>
+          <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
               <View style={styles.inputBox}>
                 <Search size={24} color='black' style={styles.icon}/>
                 <TextInput style={styles.input} placeholder='Search Sport...' onChangeText={setName}/>
               </View>
-
-              <View style={{flex:1,justifyContent:'center',alignItems:'center',marginTop:10}}>
-                <Text style={{color:'#96986dff',fontSize:25,fontWeight:'bold'}}>ACE THE <Swords size={25} color='orange'/> GAME</Text>
+              <View style={styles.titleContainer}>
+                <Text style={styles.titleText}>
+                  ACE THE <Swords size={25} color="orange" /> GAME
+                </Text>
               </View>
-              <View>
-                <RenderComp/>
+              <View style={styles.listContainer}>
+                <RenderComp />
               </View>
             </View>
           </SafeAreaView>
@@ -38,7 +39,9 @@ export default function Competition(){
 }
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
+    backgroundColor: 'transparent', // keep gradient visible
+    paddingHorizontal: 9,
   },
   main:{
     backgroundColor:'#f0f0f0',
@@ -77,4 +80,18 @@ input: {
   color: 'black',
   backgroundColor: '#f2f2f2',
 },
+titleContainer: {
+    alignItems: 'center',
+    marginVertical: 15,
+  },
+
+  titleText: {
+    color: '#96986dff',
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+
+  listContainer: {
+    flex: 1, // <-- gives space to FlatList
+  },
 })
