@@ -18,7 +18,6 @@ export default function Competition(){
         end={{ x: 1, y: 1 }}
       >
           <SafeAreaView>
-          <ScrollView>
             <View style={styles.container}>
               <View style={styles.inputBox}>
                 <Search size={24} color='black' style={styles.icon}/>
@@ -28,9 +27,10 @@ export default function Competition(){
               <View style={{flex:1,justifyContent:'center',alignItems:'center',marginTop:10}}>
                 <Text style={{color:'#96986dff',fontSize:25,fontWeight:'bold'}}>ACE THE <Swords size={25} color='orange'/> GAME</Text>
               </View>
-              <RenderComp/>
+              <View>
+                <RenderComp/>
+              </View>
             </View>
-          </ScrollView>
           </SafeAreaView>
         </LinearGradient>
       </CompContext.Provider>
@@ -38,9 +38,7 @@ export default function Competition(){
 }
 const styles = StyleSheet.create({
   container: {
-    height:'100%',
-    width:'100%',
-    gap:10
+    flex:1,
   },
   main:{
     backgroundColor:'#f0f0f0',

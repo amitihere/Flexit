@@ -16,11 +16,11 @@ export default function Sports(){
   },[])
   return (
     <LinearGradient
-        colors={['#1D976C', '#93F9B9']}
-        style={styles.container}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      >
+            colors={['#141515ff', '#343635ff']}
+            style={styles.container}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+    >
       <SafeAreaView>
         <SelectSlots/>
       </SafeAreaView>

@@ -32,6 +32,7 @@ export default function SelectSlots(){
 }
 const styles = StyleSheet.create({
   head: {
+    color:'white',
     fontSize:40,
     fontWeight: 'bold',
     marginLeft:15,

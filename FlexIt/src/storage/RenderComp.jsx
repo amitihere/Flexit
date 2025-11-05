@@ -5,6 +5,7 @@ export const CompContext = React.createContext();
 export default function RenderComp(){
     const DATA = CompData();
     const {name,setName,handleName} = React.useContext(CompContext);
+    console.log(name);
   return (
         <FlatList
         data={name ? handleName : DATA}
