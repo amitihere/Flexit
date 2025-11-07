@@ -18,7 +18,9 @@ export default function RenderComp(){
 }
 const Item = ({product})=> {
   const images = {
-      badminton: require('../../assets/Badminton-pana.webp'),
+      badminton: require('../../assets/paralympic badminton-cuate (1) (1).png'),
+      tabletennis: require('../../assets/paralympic table tennis-cuate (1).png'),
+      basketball: require('../../assets/Basketball-cuate (1).png'),
     };
     return (
         <View style={styles.cards} key={product.id}>
@@ -26,7 +28,14 @@ const Item = ({product})=> {
                 
               <Image source={require('../../assets/abstract-background-waves-banner-medium-600nw-2407191051.webp')} style={styles.image} />
               <View style={styles.overlay}>
-                <Image source={images[product.src]} style={{height:100,width:200}}/>
+                <View style={styles.productRow}>
+                  <Image source={images[product.src]} style={styles.productImage} />
+
+                  <View style={styles.info}>
+                    <Text style={styles.title}>{product.title}</Text>
+                    <Text style={styles.price}>₹{product.prize}</Text>
+                  </View>
+                </View>
               </View>
             </View>
         </View>
@@ -36,56 +45,70 @@ const styles = StyleSheet.create({
     cards: {
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent:'space-evenly',
-    marginBottom:10,
-    marginTop:15
+    justifyContent: 'center',
+    marginBottom: 10,
+    marginTop: 15,
   },
+
   comp: {
-    flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     height: 200,
     width: 400,
     borderRadius: 26,
     backgroundColor: '#f0f0f0',
     overflow: 'hidden',
+    position: 'relative',
   },
+
   image: {
     width: '100%',
     height: '100%',
     borderRadius: 26,
   },
+
   overlay: {
     position: 'absolute',
-    left: 10,
-    top: '20%',
+    left: 15,
+    top: '25%',
+    right: 15,
+  },
 
-    alignItems: 'flex-start',
+  productRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    borderRadius: 15,
+    padding: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 3,
   },
+
+  productImage: {
+    height: 120,
+    width: 180,
+    borderRadius: 15,
+    marginRight: 15,
+  },
+
+  info: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+
   title: {
-    textAlign:'center',
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#fff',
+    marginBottom: 6,
+  },
+
+  price: {
+    fontSize: 16,
     fontWeight: 'bold',
-    color:'maroon',
-    opacity:0.7
-  },
-  prize:{
-    fontSize:16,
-    color:'grey',
-    fontWeight:'bold',
-    marginTop:16
-  },
-  dead:{
-    fontSize:15,
-    color:'grey',
-    fontWeight:'bold',
-    marginTop:15
-  },
-  age:{
-    fontSize:18,
-    color:'red',
-    fontWeight:'bold',
-    marginTop:18
+    color: '#ffd700',
   },
 })
 

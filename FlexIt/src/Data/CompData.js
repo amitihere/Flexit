@@ -3,7 +3,7 @@ export default function CompData(){
     {
         id:1,
         title:'TableTennis sports club',
-        src: 'badminton',
+        src: 'tabletennis',
         prize: 20000,
         apply: '4th June',
         sports: 'TableTennis',
@@ -20,17 +20,17 @@ export default function CompData(){
     },
     {
         id:3,
-        title:'Basketball sports club',
-        src:'badminton',
+        title:'TableTennis sports club',
+        src:'tabletennis',
         prize: 20000,
         apply: '4th June',
-        sports: 'Basketball',
+        sports: 'TableTennis',
         eligibility:'this is for everyone'
     },
     {
         id:4,
         title:'Basketball sports club',
-        src:'badminton',
+        src:'basketball',
         prize: 20000,
         apply: '4th June',
         sports: 'Basketball',
@@ -39,7 +39,7 @@ export default function CompData(){
     {
         id:5,
         title:'Basketball sports club',
-        src:'badminton',
+        src:'basketball',
         prize: 20000,
         apply: '4th June',
         sports: 'Basketball',
@@ -48,7 +48,7 @@ export default function CompData(){
     {
         id:6,
         title:'Basketball sports club',
-        src:'badminton',
+        src:'basketball',
         prize: 20000,
         apply: '4th June',
         sports: 'Basketball',
@@ -56,11 +56,11 @@ export default function CompData(){
     },
     {
         id:7,
-        title:'Basketball sports club',
+        title:'Badminton sports club',
         src:'badminton',
         prize: 20000,
         apply: '4th June',
-        sports: 'Basketball',
+        sports: 'Badminton',
         eligibility:'this is for everyone'
     }
     
