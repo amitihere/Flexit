@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList,Button} from 'react-native';
 import CompData from '../Data/CompData' 
 export const CompContext = React.createContext();
 export default function RenderComp(){
@@ -34,6 +34,7 @@ const Item = ({product})=> {
                   <View style={styles.info}>
                     <Text style={styles.title}>{product.title}</Text>
                     <Text style={styles.price}>₹{product.prize}</Text>
+                    <Button title='ENROLL'/>
                   </View>
                 </View>
               </View>
