@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   name: {
-    fontSize: 24,
+    fontSize: 21,
     fontWeight: 'bold',
     color: '#b9bd75ff',
     
@@ -148,7 +148,7 @@ divider: {
 },
 rate: {
   height: 25,
-  width: 70,
+  width: 75,
   backgroundColor: '#caceaaff',
   borderRadius: 10,
   justifyContent: 'center',
