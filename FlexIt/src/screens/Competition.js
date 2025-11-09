@@ -40,7 +40,6 @@ export default function Competition(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent', // keep gradient visible
     paddingHorizontal: 9,
   },
   main:{

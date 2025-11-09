@@ -10,6 +10,7 @@ import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
 import Admin from "./src/screens/Admin";
 import AddVenue from "./src/Data/AddVenue";
+import DetailsScreen from "./src/screens/DetailsScreen";
 import { House } from 'lucide-react-native';
 import { Trophy } from 'lucide-react-native';
 import { CalendarCheck } from 'lucide-react-native';
@@ -89,6 +90,7 @@ export default function App() {
         <Stack.Screen name="MainTabs" component={BottomTabs} />
         <Stack.Screen name="Admin" component={Admin} />
         <Stack.Screen name="AddVenue" component={AddVenue} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
