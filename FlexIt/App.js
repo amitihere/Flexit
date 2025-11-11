@@ -45,10 +45,14 @@ function BottomTabs() {
           <>
 
             <Tab.Screen name="home" component={Home} options={{
-              headerShown: false,
+              headerTitle: "🏠 Home Page",
+              headerTitleAlign: "flex-start",
+              headerStyle: { backgroundColor: "#96986dff" },
+              headerTintColor: "#fff",
               tabBarIcon: () => (
                 <House color="#96986dff" size={24} />
               ),
+              
             }}/>
 
             <Tab.Screen name="Competition" component={Competition} options={{

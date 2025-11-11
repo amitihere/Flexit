@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-export default function Profile() {
+export default function Profile({navigation}) {
   const [name, setName] = useState('')
   const [pass, setPass] = useState('')
 
@@ -12,15 +12,17 @@ export default function Profile() {
         const storedPass = await AsyncStorage.getItem("password")
         if (storedName){
             setName(storedName)
+            navigation.setOptions({ title: storedName });
         }
         if (storedPass){ 
             setPass(storedPass)
+            
         }else{
             console.log('not found')
         }
     }
     loadData()
-  }, [])
+  }, [navigation])
 
   return (
     <View style={styles.container}>

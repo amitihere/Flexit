@@ -5,7 +5,30 @@ import { useNavigation } from '@react-navigation/native';
 import CompButton from '../Extras/CompButton';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-export default function Home(){
+export default function Home({ navigation }) {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    const loadUserName = async () => {
+      try {
+        const storedName = await AsyncStorage.getItem("username");
+        if (storedName) {
+          setName(storedName);
+          navigation.setOptions({
+            headerTitle: `🏠 Home Page — ${storedName}`,
+          });
+        } else {
+          navigation.setOptions({
+            headerTitle: "🏠 Home Page",
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching username:", error);
+      }
+    };
+
+    loadUserName();
+  }, [navigation]);
 
   const navigation = useNavigation()
   const handleSlot = () => {
@@ -22,6 +45,7 @@ export default function Home(){
                 style={styles.container}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
+                
         >
         <SafeAreaView>
         <ScrollView>
@@ -71,6 +95,7 @@ const styles = StyleSheet.create({
     height:'100%',
     width:'100%',
     alignItems:'center',
+
   },
   row: {
     flexDirection: 'row',
