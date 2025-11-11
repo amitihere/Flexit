@@ -5,30 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import CompButton from '../Extras/CompButton';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-export default function Home({ navigation }) {
-  const [name, setName] = useState("");
+export default function Home() {
 
-  useEffect(() => {
-    const loadUserName = async () => {
-      try {
-        const storedName = await AsyncStorage.getItem("username");
-        if (storedName) {
-          setName(storedName);
-          navigation.setOptions({
-            headerTitle: `🏠 Home Page — ${storedName}`,
-          });
-        } else {
-          navigation.setOptions({
-            headerTitle: "🏠 Home Page",
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching username:", error);
-      }
-    };
-
-    loadUserName();
-  }, [navigation]);
 
   const navigation = useNavigation()
   const handleSlot = () => {
