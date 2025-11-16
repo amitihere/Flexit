@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground,TouchableOpacity} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-
 export default function LoginPage({setIsLoggedIn}){
     const [saved,setSaved] = useState('')
     const [name,setName] = useState('')
@@ -18,20 +17,18 @@ export default function LoginPage({setIsLoggedIn}){
         loader()
     },[])
     const handleSave = async () => {
-        console.log('vochindi royyy');
+        const data = await fetch('http://localhost:3000/signup',{
+            method: 'POST',
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({
+                name:name,
+                password:pass
+            }
+        )})
+        .then((res)=>res.json())
+        .then((value)=> console.log(value))
+        .catch((err)=> console.log(err))
         
-        if(name.trim().length===0 || pass.trim().length===0){
-            alert("Please fill the detail")
-        }
-        else{
-            await AsyncStorage.setItem("username",name)
-            await AsyncStorage.setItem("password",pass)
-            setSaved(name)
-            setStatus(true)
-            setIsLoggedIn(true)
-            setPass('')
-            setName('')
-        }
         
     }
   return (

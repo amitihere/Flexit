@@ -6,6 +6,7 @@ import CompButton from '../Extras/CompButton';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import HomeHeader from '../Extras/HomeHeader';
+import {HomeCompAttributes, HomeSportAttributes} from '../storage/HomeAttributes';
 export default function Home() {
 
 
@@ -39,28 +40,8 @@ export default function Home() {
                       <Image source={require('../../assets/image.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
                   </View>
                 </TouchableOpacity>
-
-                <View style={styles.row}>
-
-                  <View style={styles.book}>
-                      <CompButton/>
-                      <TouchableOpacity onPress={handleComp}>
-                        <Ionicons name="arrow-forward-outline" color="black" size={60}/>
-                      </TouchableOpacity>
-                      <Image source={require('../../assets/image copy 2.png')} style={{ width: 180, height: 150, borderRadius: 10 }}/>
-                  </View>
-
-                  <View style={[styles.book,{justifyContent:'space-between',height:280}]}>
-                    <View>
-                      <Image source={require('../../assets/image copy 3.png')} style={{ width: 180, height: 180, borderRadius: 5 }}/>
-                    </View>
-                    <View style={{width:140,marginBottom:20}}>
-                      <Text style={{textAlign:'center'}}>Participate in your favourite sports competitions</Text>
-                    </View>
-                  </View>
-                </View>
-                <View>
-                </View>
+                <HomeCompAttributes/>
+                <HomeSportAttributes/>
               </View>
           </ScrollView>
         </SafeAreaView>
@@ -76,7 +57,6 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     alignItems:'center',
-    flex:1,
     paddingTop:10
 
   },
@@ -98,7 +78,7 @@ const styles = StyleSheet.create({
     height:200,
     width:400,
     borderRadius:30,
-    marginTop:30,
+    margin:30,
     backgroundColor:'#f0f0f0'
   },
   book: {
@@ -127,5 +107,13 @@ const styles = StyleSheet.create({
     textAlign:'center',
     justifyContent:'center',
     fontSize:20
-  }
+  },
+  divider: {
+  height: 1,
+  backgroundColor: '#a09e9eff',
+  width: '95%',
+  alignSelf: 'center',
+  marginVertical: 10,
+  opacity: 0.7,
+},
 })

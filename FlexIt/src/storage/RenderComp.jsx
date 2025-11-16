@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList,Button} from 'react-native';
 import CompData from '../Data/CompData' 
+import { useNavigation } from '@react-navigation/native';
 export const CompContext = React.createContext();
 export default function RenderComp(){
     const DATA = CompData();
@@ -17,6 +18,7 @@ export default function RenderComp(){
   )
 }
 const Item = ({product})=> {
+  const navigation = useNavigation()
   const images = {
       badminton: require('../../assets/paralympic badminton-cuate (1) (1).png'),
       tabletennis: require('../../assets/paralympic table tennis-cuate (1).png'),
@@ -34,7 +36,7 @@ const Item = ({product})=> {
                   <View style={styles.info}>
                     <Text style={styles.title}>{product.title}</Text>
                     <Text style={styles.price}>₹{product.prize}</Text>
-                    <Button title='ENROLL'/>
+                    <Button title='ENROLL' onPress={() => navigation.navigate('New')}/>
                   </View>
                 </View>
               </View>
