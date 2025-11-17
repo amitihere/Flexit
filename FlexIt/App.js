@@ -15,6 +15,7 @@ import { House } from 'lucide-react-native';
 import { Trophy } from 'lucide-react-native';
 import { CalendarCheck } from 'lucide-react-native';
 import { User } from 'lucide-react-native';
+import EnrolComp from "./src/screens/EnrolComp";
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 function BottomTabs() {
@@ -93,6 +94,7 @@ export default function App() {
         <Stack.Screen name="Admin" component={Admin} />
         <Stack.Screen name="AddVenue" component={AddVenue} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="EnrolComp" component={EnrolComp}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
