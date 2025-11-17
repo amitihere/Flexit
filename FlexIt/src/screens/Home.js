@@ -29,17 +29,36 @@ export default function Home() {
         >
         <SafeAreaView>
 
-          <ScrollView>
+          <ScrollView showsVerticalScrollIndicator={false}>
             <HomeHeader/>
 
               <View style={styles.container}>
-                
-                <TouchableOpacity  onPress={handleSlot}>
-                  <View style={[styles.comp]}>
-                      <Image source={require('../../assets/image copy.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
-                      <Image source={require('../../assets/image.png')} style={{ width: 200, height: 200, borderRadius: 10 }}/>
+                <View style={styles.mainWrap}>
+                  <View style={styles.book}>
+
+                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
+                      <Text>Book now</Text>
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
+                  <View style={styles.comp}>
+
+                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Competition")}>
+                      <Text>Compete now</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.bookVenue}>
+
+                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
+                      <Text>Book now</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.venue}>
+
+                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("AddVenue")}>
+                      <Text>Add Venue</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
                 <HomeCompAttributes/>
                 <HomeSportAttributes/>
               </View>
@@ -60,46 +79,50 @@ const styles = StyleSheet.create({
     paddingTop:10
 
   },
-  row: {
+  mainWrap: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent:'space-evenly',
-    marginTop: 5,
-    gap:10,
-    margin:10,
-    marginRight:10
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    margin:24
   },
   comp: {
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    borderWidth:1,
-    borderColor:'#f0f0f0',
-    height:200,
-    width:400,
-    borderRadius:30,
-    margin:30,
-    backgroundColor:'#f0f0f0'
+    height: 150,
+    width: 180,
+    borderRadius: 12,
+    marginBottom: 10,
+    backgroundColor: 'grey',
   },
   book: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#f0f0f0',
-    height: 330,
+    height: 150,
     width: 180,
-    borderRadius: 30,
-    marginTop: 30,
-    backgroundColor: 'white',
+    borderRadius: 12,
+    marginBottom: 10,
+    backgroundColor: 'yellow',
+    overflow:'hidden'
+  },
+  venue:{
+    height: 150,
+    width: 180,
+    borderRadius: 12,
+    marginBottom: 10,
+    backgroundColor: 'blue',
+  },
+  bookVenue:{
+    height: 150,
+    width: 180,
+    borderRadius: 12,
+    marginBottom: 10,
+    backgroundColor: 'orange',
   },
   button: {
-    width:150,
-    height: 50,
-    backgroundColor:'grey',
-    justifyContent:'center',
-    borderRadius:10
-    
+    width: '100%',
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ddd',
+    borderRadius: 6,
+    marginTop: 'auto',
+    opacity:0.8
   },
   text: {
     color:'maroon',

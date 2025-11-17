@@ -30,7 +30,7 @@ export function HomeCompAttributes(){
         source={require('../../assets/animations/Football team players.json')}
         autoPlay
         loop
-        style={{ width: 200, height: 200 }}
+        style={{ width: 300, height: 200 ,alignSelf:'center'}}
       />
         <View style={styles.divider}></View>
 
