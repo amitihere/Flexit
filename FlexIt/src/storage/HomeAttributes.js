@@ -1,6 +1,7 @@
 import React from 'react'
 import {View,Text,StyleSheet,FlatList,Image} from 'react-native'
 import { ExploreComp } from '../Data/ExploreComp'
+import LottieView from 'lottie-react-native';
 export function HomeCompAttributes(){
     const Item = ({product}) => {
         return (
@@ -25,6 +26,12 @@ export function HomeCompAttributes(){
             contentContainerStyle={{ alignItems: "center" }}
             />
         </View>
+        <LottieView
+        source={require('../../assets/animations/Football team players.json')}
+        autoPlay
+        loop
+        style={{ width: 200, height: 200 }}
+      />
         <View style={styles.divider}></View>
 
         
@@ -57,6 +64,7 @@ export function HomeSportAttributes(){
             contentContainerStyle={{ alignItems: "center" }}
             />
         </View>
+        
         <View style={styles.divider}></View>
 
         

@@ -5,7 +5,7 @@ export const ExploreComp = [
     },
     {
         id:2,
-        image: require('../../assets/Gemini_Generated_Image_rdjtpqrdjtpqrdjt (1).png')
+        image: require('../../assets/Gemini_Generated_Image_y622xjy622xjy622 (1).png')
     },
     {
         id:3,
