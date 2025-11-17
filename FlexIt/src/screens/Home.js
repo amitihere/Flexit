@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import HomeHeader from '../Extras/HomeHeader';
 import {HomeCompAttributes, HomeSportAttributes} from '../storage/HomeAttributes';
+import LottieView from 'lottie-react-native';
 export default function Home() {
 
 
@@ -35,29 +36,49 @@ export default function Home() {
               <View style={styles.container}>
                 <View style={styles.mainWrap}>
                   <View style={styles.book}>
-
+                    
+                    <Image
+                      source={require('../../assets/Cricket-bro (1).png')}
+                      style={{height:120,width:150,alignSelf:'center',marginBottom:'auto'}}
+                    />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
-                      <Text>Book now</Text>
+                      <Text style={styles.text}>Book now</Text>
                     </TouchableOpacity>
                   </View>
+
                   <View style={styles.comp}>
-
+                    <LottieView
+                      source={require('../../assets/animations/Trophy.json')}
+                      autoPlay
+                      loop
+                      style={{ width: 150, height: 120 ,alignSelf:'center',marginBottom:'auto'}}
+                    />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Competition")}>
-                      <Text>Compete now</Text>
+                      <Text style={styles.text}>Competitions</Text>
                     </TouchableOpacity>
                   </View>
+
                   <View style={styles.bookVenue}>
-
+                    <Image
+                      source={require('../../assets/Location review-cuate (1).png')}
+                      style={{height:120,width:150,alignSelf:'center',marginBottom:'auto'}}
+                    />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
-                      <Text>Book now</Text>
+                      <Text style={styles.text}>Venues</Text>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.venue}>
 
+
+                  <View style={styles.venue}>
+                    <Image
+                      source={require('../../assets/Live collaboration-rafiki (1).png')}
+                      style={{height:120,width:140,alignSelf:'center',marginBottom:'auto'}}
+                    />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("AddVenue")}>
-                      <Text>Add Venue</Text>
+                      <Text style={styles.text}>Add Venue</Text>
                     </TouchableOpacity>
                   </View>
+
                 </View>
                 <HomeCompAttributes/>
                 <HomeSportAttributes/>
@@ -83,21 +104,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    margin:24
+    margin:24,
   },
   comp: {
     height: 150,
     width: 180,
     borderRadius: 12,
     marginBottom: 10,
-    backgroundColor: 'grey',
+    backgroundColor: '#96986dff',
+  },
+  text:{
+    fontSize:17,
+    fontWeight:'bold',
+    color: 'white'
   },
   book: {
     height: 150,
     width: 180,
     borderRadius: 12,
     marginBottom: 10,
-    backgroundColor: 'yellow',
+    backgroundColor: '#4d614eff',
     overflow:'hidden'
   },
   venue:{
@@ -105,7 +131,7 @@ const styles = StyleSheet.create({
     width: 180,
     borderRadius: 12,
     marginBottom: 10,
-    backgroundColor: 'blue',
+    backgroundColor: '#8789a5ff',
   },
   bookVenue:{
     height: 150,
@@ -119,17 +145,10 @@ const styles = StyleSheet.create({
     height: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ddd',
+    backgroundColor: 'black',
     borderRadius: 6,
     marginTop: 'auto',
     opacity:0.8
-  },
-  text: {
-    color:'maroon',
-    fontWeight:'bold',
-    textAlign:'center',
-    justifyContent:'center',
-    fontSize:20
   },
   divider: {
   height: 1,
