@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList,Button, TouchableOpacity} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList,Button, TouchableOpacity, Dimensions} from 'react-native';
 import CompData from '../Data/CompData' 
 import { MapPin } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 export const CompContext = React.createContext();
+const { width, height } = Dimensions.get('window');
 export default function RenderComp(){
     const DATA = CompData();
     const {name,setName,handleName} = React.useContext(CompContext);
@@ -42,20 +43,16 @@ const Item = ({product})=> {
                   </Text>
                   <View style={styles.locationContainer}>
                     <MapPin size={20} color="#d3cbcbff" />
-                    <Text style={styles.location}>{product.venue}</Text>
+                    <Text style={styles.location} numberOfLines={2}>{product.venue}</Text>
                   </View>
 
                   <Text style={styles.elig}>{product.eligibility}</Text>
                   <View style={styles.divider}></View>
-                  <TouchableOpacity 
-                    onPress={() => navigation.navigate('EnrolComp', { product })}
-                    style={styles.enrollButton}
-                  >
-                    <View style={styles.row}>
+                  <TouchableOpacity style={styles.enrollButton} onPress={() => navigation.navigate('EnrolComp', { product })}>
+                    <View style={styles.enrollCenter}>
                       <Text style={styles.registrationText}>
                         Registrations closes by {product.competitionStart}
                       </Text>
-
                       <Text style={styles.enrollText}>Enroll</Text>
                     </View>
                   </TouchableOpacity>
@@ -65,68 +62,70 @@ const Item = ({product})=> {
         </View>
 
   )}
-const styles = StyleSheet.create({
-    cards: {
+export const styles = StyleSheet.create({
+  cards: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 10,
-    marginTop: 15,
+    marginBottom: height * 0.015,
+    marginTop: height * 0.02,
   },
+
   elig: {
-  color: 'white',
-  textAlign: 'center',
-  fontWeight: 'bold',
-  fontSize: 19,
-  letterSpacing: 0.5,
-  textShadowColor: 'rgba(0, 0, 0, 0.5)',  
-  textShadowRadius: 2,
-  paddingVertical:13
-},
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: width * 0.040,
+    letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowRadius: 2,
+    paddingTop: height * 0.02,
+  },
 
   comp: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 320,
-    width: 400,
-    borderRadius: 26,
+    height: height * 0.45,
+    width: width * 0.92,
+    borderRadius: 30,
     backgroundColor: '#f0f0f0',
     overflow: 'hidden',
     position: 'relative',
   },
-  mainInfo:{
-    backgroundColor:'#000000',
-    justifyContent:'center',
-    height:'55%',
-    width:'100%',
-    paddingHorizontal:20,
-    paddingTop:14
+
+  mainInfo: {
+    backgroundColor: '#000',
+    justifyContent: 'center',
+    height: '55%',
+    width: '100%',
+    paddingHorizontal: width * 0.05,
+    paddingTop: height * 0.015,
   },
+
   image: {
     width: '100%',
     height: '100%',
-    borderRadius: 26,
+    borderRadius: 20,
   },
-
 
   productRow: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'rgba(4, 4, 4, 0.6)',
-    height:'45%',
-    padding: 12,
+    height: '45%',
+    padding: width * 0.03,
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowRadius: 6,
     elevation: 3,
-    marginBottom:'auto'
+    marginBottom: 'auto',
   },
 
   productImage: {
-    height: 120,
-    width: 180,
+    height: height * 0.15,
+    width: width * 0.38,
     borderRadius: 15,
-    marginRight: 15,
+    marginRight: width * 0.04,
   },
 
   info: {
@@ -135,98 +134,76 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 18,
+    fontSize: width * 0.045,
     fontWeight: '700',
     color: '#fff',
     marginBottom: 6,
   },
 
   priceLine: {
-  fontSize: 16,
-  fontWeight: '600',
-  color:'white',
-  letterSpacing: 0.5,
-},
+    fontSize: width * 0.040,
+    fontWeight: '600',
+    color: 'white',
+    letterSpacing: 0.5,
+  },
 
-priceAmount: {
-  fontSize: 20,
-  fontWeight: '700',
-  color: '#FFD700',
-  letterSpacing: 1,
-  textShadowColor: 'rgba(0,0,0,0.5)',
-  textShadowOffset: { width: 1, height: 1 },
-  textShadowRadius: 3,
-},
-
+  priceAmount: {
+    fontSize: width * 0.055,
+    fontWeight: '700',
+    color: '#FFD700',
+    letterSpacing: 1,
+    textShadowColor: 'rgba(0,0,0,0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
+  },
 
   location: {
-    fontSize: 16,
-    color: '#aaaaaa',
+    fontSize: width * 0.040,
+    color: '#aaa',
     paddingLeft: 5,
-    marginTop: 4, 
+    marginTop: 4,
     flexShrink: 1,
   },
+
   locationContainer: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingTop:8,
-  gap: 6,
-},
-divider: {
-  height: 1,
-  backgroundColor: '#a09e9eff',
-  width: '95%',
-  alignSelf: 'center',
-  marginVertical: 6,
-  opacity: 0.7,
-},
-enrollButton: {
-  marginTop: 'auto',
-  paddingVertical: 8,
-  paddingHorizontal: 10,
-},
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: height * 0.01,
+    gap: 6,
+  },
 
-row: {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-},
+  divider: {
+    height: 1,
+    backgroundColor: '#a09e9eff',
+    width: '95%',
+    alignSelf: 'center',
+    marginVertical: height * 0.01,
+    opacity: 0.7,
+  },
 
-registrationText: {
-  color: 'rgba(187, 184, 184, 0.7)',
-  fontSize: 13,
-  fontWeight: '500',
-  letterSpacing: 0.3,
-},
+  enrollButton: {
+    marginTop: 'auto',
+    paddingVertical: height * 0.012,
+    paddingHorizontal: width * 0.03,
+  },
 
-enrollText: {
-  color: 'white',
-  fontSize: 20,
-  fontWeight: 'bold',
-  paddingBottom: 5,
-  textAlign: 'right',
-},
+  enrollCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 
-})
+  registrationText: {
+    color: 'rgba(187, 184, 184, 0.7)',
+    fontSize: width * 0.028,
+    fontWeight: '500',
+    letterSpacing: 0.3,
+  },
 
-{/* <Text style={styles.title}>
-                    Title: {product.title}
-                </Text>
-                <Text style={styles.prize}>
-                    Prize pool: <Text style={{fontSize:22,color:'green'}}>{product.prize}</Text>
-                </Text>
-    
-                <Text style={styles.dead}>
-                    apply before: ~ {product.apply}
-                </Text>
-                <Text style={styles.age}>Eligibility: <Text style={{color:'black',fontSize:14}}>
-                    {product.eligibility}
-                    </Text>
-                </Text>
-    
-                <View style={{flex:1,justifyContent:'flex-end'}}>
-                    <Text style={{textAlign:'center',justifyContent:'flex-end'}}>
-                        Read terms and conditions
-                    </Text>
-    
-                </View> */}
+  enrollText: {
+    color: 'white',
+    fontSize: width * 0.050,
+    fontWeight: 'bold',
+    paddingBottom: 5,
+    textAlign: 'right',
+  },
+});

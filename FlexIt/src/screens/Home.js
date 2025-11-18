@@ -39,7 +39,7 @@ export default function Home() {
                     
                     <Image
                       source={require('../../assets/Cricket-bro (1).png')}
-                      style={{height:120,width:150,alignSelf:'center',marginBottom:'auto'}}
+                      style={{height:100,width:150,alignSelf:'center',marginBottom:'auto'}}
                     />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
                       <Text style={styles.text}>Book now</Text>
@@ -51,7 +51,7 @@ export default function Home() {
                       source={require('../../assets/animations/Trophy.json')}
                       autoPlay
                       loop
-                      style={{ width: 150, height: 120 ,alignSelf:'center',marginBottom:'auto'}}
+                      style={{ width: 150, height: 100 ,alignSelf:'center',marginBottom:'auto'}}
                     />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Competition")}>
                       <Text style={styles.text}>Competitions</Text>
@@ -61,7 +61,7 @@ export default function Home() {
                   <View style={styles.bookVenue}>
                     <Image
                       source={require('../../assets/Location review-cuate (1).png')}
-                      style={{height:120,width:150,alignSelf:'center',marginBottom:'auto'}}
+                      style={{height:100,width:150,alignSelf:'center',marginBottom:'auto'}}
                     />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Sports")}>
                       <Text style={styles.text}>Venues</Text>
@@ -72,7 +72,7 @@ export default function Home() {
                   <View style={styles.venue}>
                     <Image
                       source={require('../../assets/Live collaboration-rafiki (1).png')}
-                      style={{height:120,width:140,alignSelf:'center',marginBottom:'auto'}}
+                      style={{height:100,width:150,alignSelf:'center',marginBottom:'auto'}}
                     />
                     <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("AddVenue")}>
                       <Text style={styles.text}>Add Venue</Text>
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
     margin:24,
   },
   comp: {
-    height: 150,
-    width: 180,
+    height: 130,
+    width: 150,
     borderRadius: 12,
     marginBottom: 10,
     backgroundColor: '#96986dff',
@@ -119,23 +119,23 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   book: {
-    height: 150,
-    width: 180,
+    height: 130,
+    width: 150,
     borderRadius: 12,
     marginBottom: 10,
     backgroundColor: '#4d614eff',
     overflow:'hidden'
   },
   venue:{
-    height: 150,
-    width: 180,
+    height: 130,
+    width: 150,
     borderRadius: 12,
     marginBottom: 10,
     backgroundColor: '#8789a5ff',
   },
   bookVenue:{
-    height: 150,
-    width: 180,
+    height: 130,
+    width: 150,
     borderRadius: 12,
     marginBottom: 10,
     backgroundColor: 'orange',

@@ -1,14 +1,16 @@
 import React,{useState,useEffect} from 'react'
-import {View,Text,ScrollView,StyleSheet,TextInput,Image} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,TextInput,Image,Dimensions} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import CompData from '../Data/CompData';
 import { Search,Swords } from 'lucide-react-native';
 import RenderComp, { CompContext } from '../storage/RenderComp';
+const { width } = Dimensions.get('window');
 export default function Competition(){
   const [name,setName] = useState('')
   const comp = CompData()
   const handleName = comp.filter((t)=> t.title.toLowerCase().trim().includes(name.toLowerCase().trim()))
+  
   return (
     <CompContext.Provider value={{name,setName,handleName}}>
       <LinearGradient
@@ -66,7 +68,7 @@ inputBox: {
   borderRadius: 10,
   paddingHorizontal: 10,
   height: 45,
-  width: 400,
+  width: width * 0.9,
 },
 
 icon: {
