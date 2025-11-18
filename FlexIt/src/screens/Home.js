@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import HomeHeader from '../Extras/HomeHeader';
 import {HomeCompAttributes, HomeSportAttributes} from '../storage/HomeAttributes';
 import LottieView from 'lottie-react-native';
+import {faqData} from '../Data/ExploreComp'
 export default function Home() {
 
 
@@ -82,7 +83,25 @@ export default function Home() {
                 </View>
                 <HomeCompAttributes/>
                 <HomeSportAttributes/>
+                <View style={styles.divider}></View>
+                <View style={styles.faqContainer}>
+                  <Text style={styles.faqTitle}>FAQs (Frequently Asked Questions)</Text>
+
+                  {faqData.map((item, index) => (
+                    <TouchableOpacity key={index} style={styles.faqItem}>
+                      <Text style={styles.faqQuestion}>{item.question}</Text>
+                      <Text style={styles.faqAnswer}>{item.answer}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+                
+
+
               </View>
+              <View >
+                  <Text style={{color:'white',fontWeight:'bold',fontSize:15,alignSelf:'center',paddingVertical:15}}>Developed with ❤️ by Amiti Aneesh</Text>
+              </View>
+              
           </ScrollView>
         </SafeAreaView>
 
@@ -158,4 +177,37 @@ const styles = StyleSheet.create({
   marginVertical: 10,
   opacity: 0.7,
 },
+faqContainer: {
+    marginTop: 30,
+    padding: 15,
+    backgroundColor: "#dcdfc8c5",
+    borderRadius: 10,
+    elevation: 3,
+  },
+
+  faqTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 15,
+    textAlign: "center",
+  },
+
+  faqItem: {
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderColor: "#ddd",
+  },
+
+  faqQuestion: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#333",
+  },
+
+  faqAnswer: {
+    fontSize: 14,
+    marginTop: 5,
+    color: "#555",
+    lineHeight: 20,
+  },
 })
