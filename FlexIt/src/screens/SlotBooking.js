@@ -1,11 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {View,Text,StyleSheet, TouchableOpacity} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { ArrowLeft} from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-export default function SlotBooking(){
+import SelectSlots from '../components/SelectSlots';
+import { CreateDate } from '../components/SelectSlots';
+export default function SlotBooking({route}){
     const navigation = useNavigation()
+    const { product } = route.params;
+    const {select} = useContext(CreateDate)
   return (
     <LinearGradient
         colors={['#141515ff', '#343635ff']}
@@ -17,7 +21,10 @@ export default function SlotBooking(){
             <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
                 <ArrowLeft size={24} color="#fff" />
             </TouchableOpacity>
-            <Text>Came to slot booking page</Text>
+            <View>
+                <Text style={styles.title}>{product.name}</Text>
+                <SelectSlots/>
+            </View>
         </SafeAreaView>
     </LinearGradient>
   )
@@ -35,5 +42,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(51, 49, 49, 0.5)',
     padding: 8,
     borderRadius: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginVertical: 20,
+    alignSelf:'center'
   },
 })
