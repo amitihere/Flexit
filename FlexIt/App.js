@@ -9,6 +9,7 @@ import Sports from './src/screens/Sports'
 import LoginPage from "./src/screens/LoginPage";
 import About from "./src/screens/About"
 import Admin from "./src/screens/Admin";
+import SlotBooking from "./src/screens/SlotBooking";
 import AddVenue from "./src/Data/AddVenue";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import { House } from 'lucide-react-native';
@@ -95,6 +96,7 @@ export default function App() {
         <Stack.Screen name="AddVenue" component={AddVenue} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="EnrolComp" component={EnrolComp}/>
+        <Stack.Screen name="SlotBooking" component ={SlotBooking}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet,TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet,TouchableOpacity,Dimensions } from 'react-native';
 import { ArrowLeft,MapPin } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { sportIcons } from '../Data/Book';
+const {width,height} = Dimensions.get('window')
 export default function Details({ route }) {
   const { product } = route.params;
   const navigation = useNavigation();
+  
   
 
 
@@ -74,6 +76,9 @@ export default function Details({ route }) {
 
 
         </ScrollView>
+        <TouchableOpacity style={[styles.button,{alignSelf:'center'}]} onPress={()=> navigation.navigate('SlotBooking',{product})}>
+          <Text style={styles.elig}>Book Your Slots</Text>
+        </TouchableOpacity>
       </SafeAreaView>
       </LinearGradient>
   );
@@ -152,5 +157,14 @@ sport:{
   color:'#ddd8d6ff',
   marginTop:5,
   textAlign:'center',
-}
+},
+elig: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: width * 0.040,
+    letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowRadius: 2,
+  },
 });
