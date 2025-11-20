@@ -14,6 +14,7 @@ export default function SelectSlots({info}){
   const [sportSelect, setSportSelect] = useState(null)
   const [play,setPlay] = useState('')
   const [payCourt,setPayCourt] = useState([])
+  const [selectedTimes, setSelectedTimes] = useState([]);
   useEffect(()=> {
     let arr = generateDates(10)
     if(arr.length>0){
@@ -39,6 +40,15 @@ export default function SelectSlots({info}){
     return [...prev, index];
   });
 };
+const handleTimeSelect = (time) => {
+  setSelectedTimes(prev => {
+    if (prev.includes(time)) {
+      return prev.filter(t => t !== time);
+    }
+    return [...prev, time];
+  });
+};
+
 
   return (
         <ScrollView contentContainerStyle={{ paddingBottom: 100,flexGrow: 1 }}>
@@ -81,11 +91,41 @@ export default function SelectSlots({info}){
               </View>
             </View>
           )}
-          {payCourt.length > 0 && (
-            <TouchableOpacity style={styles.payBtn} onPress={()=> navigation.navigate('Payment',{info,payCourt,play})}>
-              <Text style={styles.payText}>BOOK</Text>
-            </TouchableOpacity>
+        {payCourt.length > 0 && (
+          <View>
+            <View style={styles.divider}/>
+            <Text style={styles.sportText}>Select Timings</Text>
+
+            <View style={styles.court}>
+              {info.timings[play]?.map((time, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={selectedTimes.includes(time) ? styles.block : styles.blockSelect}
+                  onPress={() => handleTimeSelect(time)}
+                >
+                  <Text style={styles.textSelect}>{time}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
         )}
+        {selectedTimes.length > 0 && (
+          <TouchableOpacity
+            style={styles.payBtn}
+            onPress={() =>
+              navigation.navigate('Payment', {
+                info,
+                payCourt,
+                play,
+                selectedTimes
+              })
+            }
+          >
+            <Text style={styles.payText}>BOOK</Text>
+          </TouchableOpacity>
+        )}
+
+
         </ScrollView>
       
   )
