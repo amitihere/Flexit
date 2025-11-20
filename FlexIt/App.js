@@ -16,6 +16,7 @@ import { House } from 'lucide-react-native';
 import { Trophy } from 'lucide-react-native';
 import { CalendarCheck } from 'lucide-react-native';
 import { User } from 'lucide-react-native';
+import  Payment  from "./src/screens/Payment";
 import EnrolComp from "./src/screens/EnrolComp";
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
@@ -97,6 +98,7 @@ export default function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="EnrolComp" component={EnrolComp}/>
         <Stack.Screen name="SlotBooking" component ={SlotBooking}/>
+        <Stack.Screen name="Payment" component={Payment}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

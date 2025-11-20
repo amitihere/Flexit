@@ -5,11 +5,9 @@ import { ArrowLeft} from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SelectSlots from '../components/SelectSlots';
-import { CreateDate } from '../components/SelectSlots';
 export default function SlotBooking({route}){
     const navigation = useNavigation()
     const { product } = route.params;
-    const {select} = useContext(CreateDate)
   return (
     <LinearGradient
         colors={['#141515ff', '#343635ff']}
@@ -23,7 +21,7 @@ export default function SlotBooking({route}){
             </TouchableOpacity>
             <View>
                 <Text style={styles.title}>{product.name}</Text>
-                <SelectSlots/>
+                <SelectSlots info = {product}/>
             </View>
         </SafeAreaView>
     </LinearGradient>

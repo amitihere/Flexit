@@ -18,6 +18,7 @@ export const clubs = [
     Amenities: ['Parking Facility', 'Locker Rooms', 'Equipment Rental', 'Cafeteria'],
     description:
       'Nimbalkar Sports Club is a premier sports facility in Pune offering top-notch amenities for badminton, cricket, and volleyball enthusiasts. Located conveniently near Balewadi Stadium, it provides easy access and ample parking. The club features well-maintained courts, locker rooms, and equipment rental services to ensure a comfortable experience for all members. After an intense game, relax at the on-site cafeteria that serves a variety of refreshments. Whether you are a beginner or a seasoned player, Nimbalkar Sports Club is the perfect place to hone your skills and enjoy your favorite sports.',
+    courts: {badminton: 6, cricket: 1, volleyball: 3}
   },
   {
     id: 2,

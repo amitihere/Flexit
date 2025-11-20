@@ -1,11 +1,19 @@
-import React,{useState,useEffect} from 'react'
-import {View,Text,ScrollView,StyleSheet, TouchableOpacity} from 'react-native';
+import React,{useState,useEffect, use} from 'react'
+import {View,Text,ScrollView,StyleSheet, TouchableOpacity,Dimensions} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { generateDates } from '../storage/Date';
-export const CreateDate = React.createContext()
-export default function SelectSlots(){
+import {MaterialCommunityIcons} from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native';
+import { sportIcons } from '../Data/Book';
+const {width,height} = Dimensions.get('window')
+export default function SelectSlots({info}){
+  const navigation = useNavigation()
+
   const [slot,setSlot] = useState([])
-  const [select,setSelect] = useState(false)
+  const [select,setSelect] = useState(null)
+  const [sportSelect, setSportSelect] = useState(null)
+  const [play,setPlay] = useState('')
+  const [payCourt,setPayCourt] = useState([])
   useEffect(()=> {
     let arr = generateDates(10)
     if(arr.length>0){
@@ -17,13 +25,24 @@ export default function SelectSlots(){
     console.log(index)
     setSelect(index)
   }
+  const handleSports = (index,sport) => {
+    console.log(index,sport)
+    setSportSelect(index)
+    setPlay(sport)
+  }
+  const handleCourts = (index) => {
+  setPayCourt(prev => {
+    if (prev.includes(index)) {
+      return prev.filter(i => i !== index);
+    }
+
+    return [...prev, index];
+  });
+};
+
   return (
-    <CreateDate.Provider value={{select}}>
-        <ScrollView>
+        <ScrollView contentContainerStyle={{ paddingBottom: 100,flexGrow: 1 }}>
           <View>
-              <Text style={styles.head}>
-                  Select the Date :)
-              </Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {slot.map((data,index)=>(
                   <TouchableOpacity style={select===index? styles.cardSelect: styles.card} key={index} onPress={()=> handleSlots(index)}>
@@ -33,18 +52,45 @@ export default function SelectSlots(){
                 ))}
               </ScrollView>
           </View>
+          {select !== null && (
+            <View style={styles.maintain}>
+              <Text style={styles.sportText}>Please select the sport</Text>
+
+              {info.sports.map((sport, index) => (
+                <TouchableOpacity key={index} style={sportSelect==index?styles.avail:styles.availSelect} onPress={()=> handleSports(index,sport)}>
+                  <MaterialCommunityIcons
+                    name={sportIcons[sport.toLowerCase()]}
+                    size={30}
+                    color="#96986dff"
+                  />
+                  <Text style={styles.sport}>{sport}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+          {select !== null && sportSelect !== null && (
+            <View>
+              <View style={styles.divider}/>
+              <Text style={styles.sportText}>select the courts</Text>
+              <View style={styles.court}>
+                {[...Array(info.courts[play])].map((data,index)=>(
+                  <TouchableOpacity style={payCourt.includes(index)?styles.block:styles.blockSelect} onPress={()=> handleCourts(index)} key={index}>
+                    <Text style={styles.textSelect}> {`${play} court `}{index+1}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+          {payCourt.length > 0 && (
+            <TouchableOpacity style={styles.payBtn} onPress={()=> navigation.navigate('Payment',{info,payCourt,play})}>
+              <Text style={styles.payText}>BOOK</Text>
+            </TouchableOpacity>
+        )}
         </ScrollView>
-      </CreateDate.Provider>
+      
   )
 }
 const styles = StyleSheet.create({
-  head: {
-    color:'white',
-    fontSize:40,
-    fontWeight: 'bold',
-    marginLeft:15,
-    marginBottom:20
-  },
   card: {
     width:80,
     height:80,
@@ -79,5 +125,97 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize:20,
     color:'#0a0a0aff'
-  }
+  },
+  sportText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: width * 0.040,
+    letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowRadius: 2,
+    paddingTop: height * 0.03,
+  },
+  avail:{
+  backgroundColor: '#363c3cff',
+  width:width*0.55,
+  height: height * 0.08,
+  opacity:0.9,
+  marginVertical:10,
+  borderRadius:12,
+  alignItems:'center',
+  justifyContent:'center'
+},
+availSelect:{
+  backgroundColor: '#0a0a0aff',
+  width:width*0.55,
+  height: height * 0.08,
+  opacity:0.9,
+  marginVertical:10,
+  borderRadius:12,
+  alignItems:'center',
+  justifyContent:'center'
+},
+sport:{
+  color:'#ddd8d6ff',
+  marginTop:5,
+  textAlign:'center',
+},
+maintain:{
+  alignItems:'center',
+  overflow:'hidden'
+},
+divider: {
+    height: 1,
+    backgroundColor: '#a09e9eff',
+    width: '95%',
+    alignSelf: 'center',
+    marginVertical: height * 0.01,
+    opacity: 0.7,
+  },
+court: {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: 15,
+},
+block: {
+  backgroundColor: '#363c3cff',
+  width:width*0.40,
+  height: height * 0.08,
+  opacity:0.9,
+  margin:10,
+  borderRadius:12,
+  alignItems:'center',
+  justifyContent:'center'
+},
+blockSelect:{
+  backgroundColor: '#0a0a0aff',
+  width:width*0.40,
+  height: height * 0.08,
+  opacity:0.9,
+  margin:10,
+  borderRadius:12,
+  alignItems:'center',
+  justifyContent:'center'
+},
+payBtn: {
+  backgroundColor: '#a8ae8cff',
+  width: width *0.40,
+  height: height * 0.08,
+  marginTop: 15,
+  marginBottom: 40,
+  borderRadius: 12,
+  alignSelf:'center',
+  justifyContent:'center'
+},
+payText: {
+  color: 'white',
+  fontSize: width * 0.040,
+  fontWeight: 'bold',
+  textAlign:'center'
+}
+
+
 })
