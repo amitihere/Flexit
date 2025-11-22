@@ -12,26 +12,7 @@ export default function About(){
         
         <View style={styles.container}>
           <Profile/>
-          <View style={styles.cards}>
-
-            <TouchableOpacity style={styles.inside}>
-              <Text style={styles.text}>My Bookings</Text>
-              <Text>View Transactions & Receipts</Text>
-              <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.inside}>
-              <Text style={styles.text}>Preferences & Privacy</Text>
-              <Text>Sports Rules, Notifications, Loactions, etc..</Text>
-              <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.inside}>
-              <Text style={styles.text}>Competitions Rule</Text>
-              <Text>Competition Rules, Regulations, Permissions</Text>
-              <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </TouchableOpacity>
-          </View>
+          
 
           <View style={styles.cards}>
             <TouchableOpacity style={styles.inside} onPress={()=> navigation.navigate('Admin')}>
@@ -39,18 +20,13 @@ export default function About(){
                 <Text>Add Sports Club with us.</Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 5}} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.inside}>
+            <TouchableOpacity style={styles.inside} onPress={()=>alert('Please contact 839405856')}>
                 <Text style={styles.text}>Contact FlexIt</Text>
                 <Text>Contact for any queries</Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.inside}>
-                <Text style={styles.text}>Discounts %</Text>
-                <Text>Check the discounts for the sports</Text>
-                <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 10}} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.inside}>
-                <Text style={styles.text}>Invite & Earn</Text>
+                <Text style={styles.text} onPress={()=>navigation.navigate('AddVenue')}>Invite & Earn</Text>
                 <Text>Refer your friend and get discounts </Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 5}} />
             </TouchableOpacity>

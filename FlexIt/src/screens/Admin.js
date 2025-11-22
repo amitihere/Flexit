@@ -24,7 +24,7 @@ export default function Admin (){
                         </Text>
                     ))}
                 </View>
-                <TouchableOpacity style={styles.add} onPress={()=> navigation.navigate('AddVenue')}>
+                <TouchableOpacity style={styles.add} onPress={()=> alert('Please contact 78199902934')}>
                     <Text style={[styles.regis]}>Add Venue</Text>
                 </TouchableOpacity>
                 <Text style={{margin:10,fontSize:20,textAlign:'center',fontWeight:'bold'}}>~After Adding the Venue, it will be verified and then added to the
