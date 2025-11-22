@@ -4,6 +4,7 @@ import {clubs} from '../Data/Book';
 import { MapPin } from 'lucide-react-native';
 import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { LocationContext } from '../Extras/Location';
 
 const { width } = Dimensions.get('window');
 
@@ -11,10 +12,13 @@ export const BookingContext = React.createContext();
 export default function Booking(){
 
   const {title,setTitle,handleTitle} = useContext(BookingContext)
+  const {city} = useContext(LocationContext)
+
+  const cityData = city ? clubs.filter((t)=>t.location.toLowerCase().trim().includes(city.toLowerCase().trim())) : clubs
   return (
     <View >
         <FlatList
-            data={title? handleTitle : clubs}
+            data={title? handleTitle : cityData}
             renderItem={({item})=> <Item product = {item}/>}
             keyExtractor={(item)=>item.id}
             showsVerticalScrollIndicator={false}

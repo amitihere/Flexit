@@ -13,7 +13,7 @@ export const clubs = [
   {
     id: 1,
     name: 'Nimbalkar Sports Club',
-    location: 'Pune',
+    location: 'San Francisco',
     price: 200,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -26,12 +26,12 @@ export const clubs = [
     sports: ['badminton', 'cricket', 'volleyball'],
 
     Detaillocation:
-      '123 Main Street, near Balewadi Stadium, Pune, Maharashtra.\nEasily accessible from Baner Road, opposite Café Coffee Day.',
+      '123 Bay Street, near Marina District, San Francisco, CA.\nOpposite Blue Bottle Coffee.',
 
     Amenities: ['Parking Facility', 'Locker Rooms', 'Equipment Rental', 'Cafeteria'],
 
     description:
-      'Nimbalkar Sports Club is a premier sports facility in Pune offering top-notch amenities for badminton, cricket, and volleyball enthusiasts. Located conveniently near Balewadi Stadium, it provides easy access and ample parking. The club features well-maintained courts, locker rooms, and equipment rental services.',
+      'A premium sports facility in San Francisco offering access to badminton courts, cricket nets, and volleyball grounds.',
 
     courts: { badminton: 6, cricket: 1, volleyball: 3 },
 
@@ -40,8 +40,9 @@ export const clubs = [
       cricket: defaultTimings,
       volleyball: defaultTimings
     },
-    buying : {
-      badminton : 400,
+
+    buying: {
+      badminton: 400,
       cricket: 900,
       volleyball: 200
     }
@@ -51,7 +52,7 @@ export const clubs = [
   {
     id: 2,
     name: 'Power Smash Arena',
-    location: 'Mumbai',
+    location: 'San Francisco',
     price: 250,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -64,12 +65,12 @@ export const clubs = [
     sports: ['badminton'],
 
     Detaillocation:
-      '4th Floor, Sunrise Sports Complex, Andheri West, Mumbai.\nLocated beside Infinity Mall with ample parking space.',
+      '4th Street Sports Complex, Downtown San Francisco.\nNext to Salesforce Tower.',
 
     Amenities: ['Changing Rooms', 'Snack Bar', 'AC Courts', 'Coaching Available'],
 
     description:
-      'Power Smash Arena in Mumbai is a modern badminton facility featuring AC courts and professional coaching programs.',
+      'A modern AC badminton facility with professional coaching and premium synthetic courts.',
 
     courts: { badminton: 8 },
 
@@ -82,7 +83,7 @@ export const clubs = [
   {
     id: 3,
     name: 'Victory Turf',
-    location: 'Bangalore',
+    location: 'San Francisco',
     price: 300,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -95,17 +96,14 @@ export const clubs = [
     sports: ['football', 'cricket'],
 
     Detaillocation:
-      'Plot No. 45, Whitefield Main Road, Bangalore, Karnataka.\nNext to Phoenix Market City, behind Shell Petrol Bunk.',
+      'Mission District Sports Park, San Francisco.\nBeside Dolores Park.',
 
     Amenities: ['Floodlights', 'Restrooms', 'Seating Area', 'Refreshment Stall'],
 
     description:
-      'Victory Turf is a large outdoor ground suitable for football and cricket, equipped with floodlights for evening games.',
+      'Large turf for football and cricket training with floodlights for night sports.',
 
-    courts: {
-      football: 1,    // turf
-      cricket: 2      // practice nets
-    },
+    courts: { football: 1, cricket: 2 },
 
     timings: {
       football: defaultTimings,
@@ -113,7 +111,7 @@ export const clubs = [
     }
   },
 
-  // ---------------- CLUB 4 ----------------
+  // ---------------- CLUB 4 (Not SF) ----------------
   {
     id: 4,
     name: 'Skyline Fitness Zone',
@@ -130,12 +128,12 @@ export const clubs = [
     sports: ['gym', 'yoga'],
 
     Detaillocation:
-      'SCO 102, Sector 34A, Chandigarh.\nOpposite Piccadilly Square Mall, easily reachable via Madhya Marg.',
+      'SCO 102, Sector 34A, Chandigarh.\nOpposite Piccadilly Square Mall.',
 
     Amenities: ['Personal Trainers', 'Steam Room', 'Diet Consultation', 'Showers'],
 
     description:
-      'Skyline Fitness Zone offers an advanced gym facility and peaceful yoga sessions.',
+      'An advanced gym and yoga center offering elite fitness training.',
 
     courts: { gym: null, yoga: null },
 
@@ -149,7 +147,7 @@ export const clubs = [
   {
     id: 5,
     name: 'Ace Tennis Academy',
-    location: 'Hyderabad',
+    location: 'San Francisco',
     price: 350,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -162,12 +160,12 @@ export const clubs = [
     sports: ['tennis'],
 
     Detaillocation:
-      'Plot 15, Jubilee Hills Road No. 36, Hyderabad, Telangana.\nClose to Durgam Cheruvu Metro Station and Inorbit Mall.',
+      "Lombard Street Courts, San Francisco.\nClose to Fisherman's Wharf.",
 
-    Amenities: ['Tennis Coaching', 'Parking', 'Café', 'Equipment Store'],
+    Amenities: ['Professional Tennis Coaching', 'Parking', 'Equipment Store'],
 
     description:
-      'Ace Tennis Academy provides professional training with multiple clay and hard courts.',
+      'A tennis academy with clay courts and experienced coaching staff.',
 
     courts: { tennis: 4 },
 
@@ -180,7 +178,7 @@ export const clubs = [
   {
     id: 6,
     name: 'Rising Hoop Center',
-    location: 'Delhi',
+    location: 'San Francisco',
     price: 220,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -193,12 +191,12 @@ export const clubs = [
     sports: ['basketball', 'gym'],
 
     Detaillocation:
-      'Block B, Connaught Place, New Delhi.\nLocated behind Palika Bazaar, near Central Park gate.',
+      'Bayview Arena, San Francisco.\nNear Oracle Park.',
 
-    Amenities: ['Indoor Court', 'Locker Facility', 'Snack Corner', 'Drinking Water'],
+    Amenities: ['Indoor Court', 'Locker Facility', 'Snack Corner', 'Water Fountain'],
 
     description:
-      'Rising Hoop Center features a wooden indoor basketball court and gym section.',
+      'Indoor basketball court with gym access and strength training options.',
 
     courts: { basketball: 1, gym: null },
 
@@ -212,7 +210,7 @@ export const clubs = [
   {
     id: 7,
     name: 'Speed Racers Track',
-    location: 'Ahmedabad',
+    location: 'San Francisco',
     price: 400,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -225,12 +223,12 @@ export const clubs = [
     sports: ['athletics', 'cycling'],
 
     Detaillocation:
-      'Raceway Ground, Science City Road, Ahmedabad, Gujarat.\nBehind Rajpath Club, near Sola Bridge.',
+      'Presidio Training Ground, San Francisco.\nNear Golden Gate Bridge.',
 
     Amenities: ['Track Lighting', 'Rest Area', 'First Aid', 'Parking'],
 
     description:
-      'Speed Racers Track offers a synthetic running track and a dedicated cycling lane.',
+      'A premium track for speed training, running, and cycling practice.',
 
     courts: { athletics: 1, cycling: 1 },
 
@@ -240,7 +238,7 @@ export const clubs = [
     }
   },
 
-  // ---------------- CLUB 8 ----------------
+  // ---------------- CLUB 8 (Not SF) ----------------
   {
     id: 8,
     name: 'Ocean View Swimming Club',
@@ -259,12 +257,9 @@ export const clubs = [
     Detaillocation:
       'Beachside Lane, Calangute Beach Road, Goa.\nOpposite Golden Sands Resort.',
 
-    Amenities: ['Changing Rooms', 'Lifeguards', 'Café', 'Showers'],
-
-    description:
-      'Ocean View Swimming Club offers professional swimming, diving, and water polo facilities.',
-
     courts: { swimming: 1, 'water-polo': 1, diving: 1 },
+
+    amenities: ['Changing Rooms', 'Lifeguards', 'Café', 'Showers'],
 
     timings: {
       swimming: defaultTimings,
@@ -277,7 +272,7 @@ export const clubs = [
   {
     id: 9,
     name: 'Pinnacle Boxing Academy',
-    location: 'Kolkata',
+    location: 'San Francisco',
     price: 260,
     images: [
       require('../../assets/images (1) (1).jpg'),
@@ -290,12 +285,12 @@ export const clubs = [
     sports: ['boxing', 'fitness', 'mma'],
 
     Detaillocation:
-      '2nd Floor, South City Arena, Prince Anwar Shah Road, Kolkata.\nNext to South City Mall.',
+      'SoMa Combat Training Center, San Francisco.\nNext to Moscone Center.',
 
-    Amenities: ['Boxing Ring', 'Personal Training', 'Showers', 'Protein Bar'],
+    Amenities: ['Boxing Ring', 'Personal Training', 'Protein Bar'],
 
     description:
-      'Pinnacle Boxing Academy specializes in boxing and MMA training.',
+      'A combat sports academy offering MMA, boxing, and fitness training.',
 
     courts: { boxing: 1, fitness: null, mma: 1 },
 
@@ -306,7 +301,7 @@ export const clubs = [
     }
   },
 
-  // ---------------- CLUB 10 ----------------
+  // ---------------- CLUB 10 (Not SF) ----------------
   {
     id: 10,
     name: 'Mountain Peak Yoga Center',
@@ -323,12 +318,7 @@ export const clubs = [
     sports: ['yoga', 'meditation', 'stretching'],
 
     Detaillocation:
-      'Hilltop Retreat, Old Manali Road, Manali, Himachal Pradesh.\nFacing the Beas River.',
-
-    Amenities: ['Yoga Mats', 'Meditation Hall', 'Café', 'Mountain View Terrace'],
-
-    description:
-      'Mountain Peak Yoga Center offers peaceful yoga and meditation sessions in the Himalayas.',
+      'Hilltop Retreat, Old Manali Road, Manali.\nFacing the Beas River.',
 
     courts: { yoga: null, meditation: null, stretching: null },
 
@@ -339,6 +329,7 @@ export const clubs = [
     }
   }
 ];
+
 
 export const sportIcons = {
   badminton: 'badminton',

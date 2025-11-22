@@ -8,12 +8,15 @@ import { BookingContext } from '../storage/Booking';
 import {clubs} from '../Data/Book';
 import Booking from '../storage/Booking';
 import { Search,Swords } from 'lucide-react-native';
+import { LocationContext } from '../Extras/Location';
 export default function Sports(){
   console.log("successfulllyyy entered sports page")
 
   const [title,setTitle] = useState('')
+  const {city} = useContext(LocationContext)
 
-  const handleTitle = clubs.filter((t)=> t.name.toLowerCase().trim().includes(title.toLowerCase().trim()))
+  const cityData = city ? clubs.filter((t)=>t.location.toLowerCase().trim().includes(city.toLowerCase().trim())) : clubs
+  const handleTitle = cityData.filter((t)=> t.name.toLowerCase().trim().includes(title.toLowerCase().trim()))
   const [slot,setSlot] = useState([])
   useEffect(()=> {
     let arr = generateDates(10)
