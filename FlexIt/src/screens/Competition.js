@@ -1,15 +1,19 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useContext} from 'react'
 import {View,Text,ScrollView,StyleSheet,TextInput,Image,Dimensions} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import CompData from '../Data/CompData';
 import { Search,Swords } from 'lucide-react-native';
 import RenderComp, { CompContext } from '../storage/RenderComp';
+import { LocationContext } from '../Extras/Location';
 const { width } = Dimensions.get('window');
+
 export default function Competition(){
-  const [name,setName] = useState('')
+  const {city} = useContext(LocationContext)
+   const [name,setName] = useState('')
   const comp = CompData()
-  const handleName = comp.filter((t)=> t.title.toLowerCase().trim().includes(name.toLowerCase().trim()))
+  const cityData = city ? comp.filter((t)=> t.state.toLowerCase().trim().includes(city.toLowerCase().trim())): comp
+  const handleName = cityData.filter((t)=> t.title.toLowerCase().trim().includes(name.toLowerCase().trim()))
   
   return (
     <CompContext.Provider value={{name,setName,handleName}}>
@@ -27,7 +31,7 @@ export default function Competition(){
               </View>
               <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>
-                  ACE THE <Swords size={25} color="orange" /> GAME
+                  ACE THE <Swords size={25} color="orange" /> GAME 
                 </Text>
               </View>
               <View style={styles.listContainer}>

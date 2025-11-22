@@ -18,6 +18,7 @@ import { CalendarCheck } from 'lucide-react-native';
 import { User } from 'lucide-react-native';
 import  Payment  from "./src/screens/Payment";
 import EnrolComp from "./src/screens/EnrolComp";
+import LocationScreen from "./src/Extras/Location";
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 function BottomTabs() {
@@ -90,17 +91,19 @@ function BottomTabs() {
 }
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="MainTabs" component={BottomTabs} />
-        <Stack.Screen name="Admin" component={Admin} />
-        <Stack.Screen name="AddVenue" component={AddVenue} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="EnrolComp" component={EnrolComp}/>
-        <Stack.Screen name="SlotBooking" component ={SlotBooking}/>
-        <Stack.Screen name="Payment" component={Payment}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <LocationScreen>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="MainTabs" component={BottomTabs} />
+          <Stack.Screen name="Admin" component={Admin} />
+          <Stack.Screen name="AddVenue" component={AddVenue} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="EnrolComp" component={EnrolComp}/>
+          <Stack.Screen name="SlotBooking" component ={SlotBooking}/>
+          <Stack.Screen name="Payment" component={Payment}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </LocationScreen>
   );
 }
 const styles = StyleSheet.create({

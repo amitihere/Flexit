@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {View,Text,StyleSheet,Image,Button,ScrollView,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -9,7 +9,9 @@ import HomeHeader from '../Extras/HomeHeader';
 import {HomeCompAttributes, HomeSportAttributes} from '../storage/HomeAttributes';
 import LottieView from 'lottie-react-native';
 import {faqData} from '../Data/ExploreComp'
+import { LocationContext } from '../Extras/Location';
 export default function Home() {
+  const {city} = useContext(LocationContext)
 
 
   const navigation = useNavigation()
@@ -32,9 +34,12 @@ export default function Home() {
         <SafeAreaView>
 
           <ScrollView showsVerticalScrollIndicator={false}>
+            
             <HomeHeader/>
 
               <View style={styles.container}>
+                <Text style={styles.text}>Current Location: {city}</Text>
+
                 <View style={styles.mainWrap}>
                   <View style={styles.book}>
                     
@@ -210,4 +215,10 @@ faqContainer: {
     color: "#555",
     lineHeight: 20,
   },
+  text: {
+    fontSize:15,
+    color: 'white',
+    fontWeight:'bold',
+    textShadowRadius: 2
+}
 })

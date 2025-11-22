@@ -1,18 +1,21 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import {View,Text,ScrollView,StyleSheet,TextInput,Image,FlatList,Button, TouchableOpacity, Dimensions} from 'react-native';
 import CompData from '../Data/CompData' 
 import { MapPin } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
+import { LocationContext } from '../Extras/Location';
 export const CompContext = React.createContext();
 const { width, height } = Dimensions.get('window');
 export default function RenderComp(){
     const DATA = CompData();
+    const {city} = useContext(LocationContext)
+    const cityData = DATA.filter((t)=> t.state.toLowerCase().trim().includes(city.toLowerCase().trim()))
     const {name,setName,handleName} = React.useContext(CompContext);
     
 
   return (
         <FlatList
-        data={name ? handleName : DATA}
+        data={name ? handleName : cityData}
         renderItem={({item})=> <Item product = {item}/>}
         keyExtractor={(item)=>item.id}
         showsVerticalScrollIndicator={false}
@@ -43,7 +46,7 @@ const Item = ({product})=> {
                   </Text>
                   <View style={styles.locationContainer}>
                     <MapPin size={20} color="#d3cbcbff" />
-                    <Text style={styles.location} numberOfLines={2}>{product.venue}</Text>
+                    <Text style={styles.location} numberOfLines={2}>{product.venue} {product.state}</Text>
                   </View>
 
                   <Text style={styles.elig}>{product.eligibility}</Text>
