@@ -6,10 +6,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { sportIcons } from '../Data/Book';
+import * as Linking from 'expo-linking';
 const {width,height} = Dimensions.get('window')
 export default function Details({ route }) {
   const { product } = route.params;
   const navigation = useNavigation();
+
+  const openMap = () => {
+    const address = product.Detaillocation;
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  
+    Linking.openURL(url).catch(err => console.error("Error opening map:", err));
+  };
   
   
 
@@ -36,7 +44,7 @@ export default function Details({ route }) {
               <Text style={styles.text}> {product.Detaillocation}</Text>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={openMap}>
               <Text>Open in Maps</Text>
             </TouchableOpacity>
 

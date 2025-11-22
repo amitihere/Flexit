@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ArrowLeft, MapPin } from 'lucide-react-native';
+import * as Linking from 'expo-linking';
 
 export default function EnrolComp({ route }) {
 
@@ -18,6 +19,12 @@ export default function EnrolComp({ route }) {
   const handleEnrol = () => {
     alert(`Please contact ${product.contact}`)
   }
+  const openMap = () => {
+    const address = product.venue;
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  
+    Linking.openURL(url).catch(err => console.error("Error opening map:", err));
+  };
 
   return (
     <LinearGradient
@@ -44,7 +51,7 @@ export default function EnrolComp({ route }) {
               <Text style={styles.locationText}>{product.venue}</Text>
             </View>
 
-            <TouchableOpacity style={styles.mapsButton}>
+            <TouchableOpacity style={styles.mapsButton} onPress={openMap}>
               <Text style={styles.mapsText}>Open in Maps</Text>
             </TouchableOpacity>
             <Text style={[styles.title,{color:'#eae30fe5'}]}>Prize Pool -  INR {product.prize}</Text>

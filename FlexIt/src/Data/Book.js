@@ -7,9 +7,9 @@ const defaultTimings = [
   "06:00 PM - 07:00 PM",
   "07:00 PM - 08:00 PM"
 ];
-
 export const clubs = [
-  // ---------------- CLUB 1 ----------------
+
+
   {
     id: 1,
     name: 'Nimbalkar Sports Club',
@@ -25,13 +25,11 @@ export const clubs = [
     reviews: 150,
     sports: ['badminton', 'cricket', 'volleyball'],
 
-    Detaillocation:
-      '123 Bay Street, near Marina District, San Francisco, CA.\nOpposite Blue Bottle Coffee.',
+    Detaillocation: '123 Bay Street, near Marina District, San Francisco, CA.\nOpposite Blue Bottle Coffee.',
 
     Amenities: ['Parking Facility', 'Locker Rooms', 'Equipment Rental', 'Cafeteria'],
 
-    description:
-      'A premium sports facility in San Francisco offering access to badminton courts, cricket nets, and volleyball grounds.',
+    description:'A premium sports facility in San Francisco offering access to badminton courts, cricket nets, and volleyball grounds.',
 
     courts: { badminton: 6, cricket: 1, volleyball: 3 },
 
@@ -48,7 +46,7 @@ export const clubs = [
     }
   },
 
-  // ---------------- CLUB 2 ----------------
+
   {
     id: 2,
     name: 'Power Smash Arena',
@@ -64,22 +62,22 @@ export const clubs = [
     reviews: 230,
     sports: ['badminton'],
 
-    Detaillocation:
-      '4th Street Sports Complex, Downtown San Francisco.\nNext to Salesforce Tower.',
+    Detaillocation:'4th Street Sports Complex, Downtown San Francisco.\nNext to Salesforce Tower.',
 
     Amenities: ['Changing Rooms', 'Snack Bar', 'AC Courts', 'Coaching Available'],
 
-    description:
-      'A modern AC badminton facility with professional coaching and premium synthetic courts.',
+    description:'A modern AC badminton facility with professional coaching and premium synthetic courts.',
 
     courts: { badminton: 8 },
 
     timings: {
       badminton: defaultTimings
-    }
+    },
+
+    buying: { badminton: 500 }
   },
 
-  // ---------------- CLUB 3 ----------------
+
   {
     id: 3,
     name: 'Victory Turf',
@@ -95,23 +93,25 @@ export const clubs = [
     reviews: 180,
     sports: ['football', 'cricket'],
 
-    Detaillocation:
-      'Mission District Sports Park, San Francisco.\nBeside Dolores Park.',
+    Detaillocation:'Mission District Sports Park, San Francisco.\nBeside Dolores Park.',
 
     Amenities: ['Floodlights', 'Restrooms', 'Seating Area', 'Refreshment Stall'],
 
-    description:
-      'Large turf for football and cricket training with floodlights for night sports.',
+    description:'Large turf for football and cricket training with floodlights for night sports.',
 
     courts: { football: 1, cricket: 2 },
 
     timings: {
       football: defaultTimings,
       cricket: defaultTimings
+    },
+
+    buying: {
+      football: 700,
+      cricket: 650
     }
   },
 
-  // ---------------- CLUB 4 (Not SF) ----------------
   {
     id: 4,
     name: 'Skyline Fitness Zone',
@@ -127,23 +127,25 @@ export const clubs = [
     reviews: 310,
     sports: ['gym', 'yoga'],
 
-    Detaillocation:
-      'SCO 102, Sector 34A, Chandigarh.\nOpposite Piccadilly Square Mall.',
+    Detaillocation:'SCO 102, Sector 34A, Chandigarh.\nOpposite Piccadilly Square Mall.',
 
     Amenities: ['Personal Trainers', 'Steam Room', 'Diet Consultation', 'Showers'],
 
-    description:
-      'An advanced gym and yoga center offering elite fitness training.',
+    description:'An advanced gym and yoga center offering elite fitness training.',
 
     courts: { gym: null, yoga: null },
 
     timings: {
       gym: defaultTimings,
       yoga: defaultTimings
+    },
+
+    buying: {
+      gym: 300,
+      yoga: 150
     }
   },
 
-  // ---------------- CLUB 5 ----------------
   {
     id: 5,
     name: 'Ace Tennis Academy',
@@ -159,22 +161,22 @@ export const clubs = [
     reviews: 275,
     sports: ['tennis'],
 
-    Detaillocation:
-      "Lombard Street Courts, San Francisco.\nClose to Fisherman's Wharf.",
+    Detaillocation:"Lombard Street Courts, San Francisco.\nClose to Fisherman's Wharf.",
 
     Amenities: ['Professional Tennis Coaching', 'Parking', 'Equipment Store'],
 
-    description:
-      'A tennis academy with clay courts and experienced coaching staff.',
+    description:'A tennis academy with clay courts and experienced coaching staff.',
 
     courts: { tennis: 4 },
 
     timings: {
       tennis: defaultTimings
-    }
+    },
+
+    buying: { tennis: 550 }
   },
 
-  // ---------------- CLUB 6 ----------------
+
   {
     id: 6,
     name: 'Rising Hoop Center',
@@ -190,23 +192,26 @@ export const clubs = [
     reviews: 190,
     sports: ['basketball', 'gym'],
 
-    Detaillocation:
-      'Bayview Arena, San Francisco.\nNear Oracle Park.',
+    Detaillocation:'Bayview Arena, San Francisco.\nNear Oracle Park.',
 
     Amenities: ['Indoor Court', 'Locker Facility', 'Snack Corner', 'Water Fountain'],
 
-    description:
-      'Indoor basketball court with gym access and strength training options.',
+    description:'Indoor basketball court with gym access and strength training options.',
 
     courts: { basketball: 1, gym: null },
 
     timings: {
       basketball: defaultTimings,
       gym: defaultTimings
+    },
+
+    buying: {
+      basketball: 300,
+      gym: 200
     }
   },
 
-  // ---------------- CLUB 7 ----------------
+
   {
     id: 7,
     name: 'Speed Racers Track',
@@ -222,23 +227,26 @@ export const clubs = [
     reviews: 140,
     sports: ['athletics', 'cycling'],
 
-    Detaillocation:
-      'Presidio Training Ground, San Francisco.\nNear Golden Gate Bridge.',
+    Detaillocation:'Presidio Training Ground, San Francisco.\nNear Golden Gate Bridge.',
 
     Amenities: ['Track Lighting', 'Rest Area', 'First Aid', 'Parking'],
 
-    description:
-      'A premium track for speed training, running, and cycling practice.',
+    description:'A premium track for speed training, running, and cycling practice.',
 
     courts: { athletics: 1, cycling: 1 },
 
     timings: {
       athletics: defaultTimings,
       cycling: defaultTimings
+    },
+
+    buying: {
+      athletics: 450,
+      cycling: 500
     }
   },
 
-  // ---------------- CLUB 8 (Not SF) ----------------
+
   {
     id: 8,
     name: 'Ocean View Swimming Club',
@@ -254,21 +262,28 @@ export const clubs = [
     reviews: 320,
     sports: ['swimming', 'water-polo', 'diving'],
 
-    Detaillocation:
-      'Beachside Lane, Calangute Beach Road, Goa.\nOpposite Golden Sands Resort.',
+    Detaillocation:'Beachside Lane, Calangute Beach Road, Goa.\nOpposite Golden Sands Resort.',
+
+    Amenities: ['Changing Rooms', 'Lifeguards', 'Café', 'Showers'],
+
+    description:'A seaside aquatic sports club with swimming, diving, and water polo facilities.',
 
     courts: { swimming: 1, 'water-polo': 1, diving: 1 },
-
-    amenities: ['Changing Rooms', 'Lifeguards', 'Café', 'Showers'],
 
     timings: {
       swimming: defaultTimings,
       'water-polo': defaultTimings,
       diving: defaultTimings
+    },
+
+    buying: {
+      swimming: 350,
+      'water-polo': 450,
+      diving: 600
     }
   },
 
-  // ---------------- CLUB 9 ----------------
+
   {
     id: 9,
     name: 'Pinnacle Boxing Academy',
@@ -284,13 +299,11 @@ export const clubs = [
     reviews: 210,
     sports: ['boxing', 'fitness', 'mma'],
 
-    Detaillocation:
-      'SoMa Combat Training Center, San Francisco.\nNext to Moscone Center.',
+    Detaillocation:'SoMa Combat Training Center, San Francisco.\nNext to Moscone Center.',
 
     Amenities: ['Boxing Ring', 'Personal Training', 'Protein Bar'],
 
-    description:
-      'A combat sports academy offering MMA, boxing, and fitness training.',
+    description:'A combat sports academy offering MMA, boxing, and fitness training.',
 
     courts: { boxing: 1, fitness: null, mma: 1 },
 
@@ -298,10 +311,16 @@ export const clubs = [
       boxing: defaultTimings,
       fitness: defaultTimings,
       mma: defaultTimings
+    },
+
+    buying: {
+      boxing: 450,
+      fitness: 300,
+      mma: 550
     }
   },
 
-  // ---------------- CLUB 10 (Not SF) ----------------
+
   {
     id: 10,
     name: 'Mountain Peak Yoga Center',
@@ -317,8 +336,11 @@ export const clubs = [
     reviews: 350,
     sports: ['yoga', 'meditation', 'stretching'],
 
-    Detaillocation:
-      'Hilltop Retreat, Old Manali Road, Manali.\nFacing the Beas River.',
+    Detaillocation:'Hilltop Retreat, Old Manali Road, Manali.\nFacing the Beas River.',
+
+    Amenities: ['Mountain View', 'Spa Therapy', 'Nature Walk Area'],
+
+    description:'A peaceful yoga and meditation retreat located in the mountains.',
 
     courts: { yoga: null, meditation: null, stretching: null },
 
@@ -326,6 +348,12 @@ export const clubs = [
       yoga: defaultTimings,
       meditation: defaultTimings,
       stretching: defaultTimings
+    },
+
+    buying: {
+      yoga: 200,
+      meditation: 180,
+      stretching: 120
     }
   }
 ];

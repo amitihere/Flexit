@@ -28,7 +28,8 @@
     "react-native-screens": "^4.16.0",
     "react-native-svg": "^15.14.0",
     "react-native-vector-icons": "^10.3.0",
-    "expo-location": "~19.0.7"
+    "expo-location": "~19.0.7",
+    "expo-linking": "~8.0.9"
   },
   "private": true,
   "devDependencies": {

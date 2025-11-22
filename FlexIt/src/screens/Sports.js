@@ -1,5 +1,5 @@
 import React,{useState,useEffect, useContext} from 'react'
-import {View,Text,ScrollView,StyleSheet,Modal,Button,TextInput} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,Modal,Button,TextInput,Dimensions} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { generateDates } from '../storage/Date';
 import SelectSlots from '../components/SelectSlots';
@@ -9,7 +9,9 @@ import {clubs} from '../Data/Book';
 import Booking from '../storage/Booking';
 import { Search,Swords } from 'lucide-react-native';
 import { LocationContext } from '../Extras/Location';
+const {width,height} = Dimensions.get('window')
 export default function Sports(){
+  
   console.log("successfulllyyy entered sports page")
 
   const [title,setTitle] = useState('')
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
   borderRadius: 10,
   paddingHorizontal: 10,
   height: 45,
-  width: 400,
+  width: width*0.90,
 },
 
 icon: {
