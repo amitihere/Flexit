@@ -34,6 +34,8 @@ export default function LoginPage({setIsLoggedIn}){
     const handleSave = async () => {
         const route = status ? "login": "signup";
         console.log(route)
+        const emailRecheck = email.includes("@") && email.lastIndexOf(".") > email.indexOf("@");
+        if (!emailRecheck) return alert('Invalid email format')
         
         console.log(status ? sentData : signData)
         try {
