@@ -23,17 +23,7 @@ import LocationScreen from "./src/Extras/Location";
   const Stack = createStackNavigator();
 function BottomTabs() {
   
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-  useEffect(() => {
-    const checkLogin = async () => {
-      const user = await AsyncStorage.getItem("username");
-      if (user) {
-        setIsLoggedIn(true);
-      }
-    };
-    checkLogin();
-  }, []);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
       <Tab.Navigator
         screenOptions={{
@@ -70,13 +60,16 @@ function BottomTabs() {
               )
             }}/>
 
-            <Tab.Screen name="About" component={About} options={{
-              tabBarLabel:'About',
-              headerShown: false,
-              tabBarIcon: () => (
-                <User color="#96986dff" size={24}/>
-              )
-            }}/>
+            <Tab.Screen 
+              name="About"
+              options={{
+                tabBarLabel:'About',
+                headerShown: false,
+                tabBarIcon: () => (<User color="#96986dff" size={24}/>),
+              }}
+            >
+              {() => <About setIsLoggedIn={setIsLoggedIn} />}
+            </Tab.Screen>
 
           </>
         ) : (

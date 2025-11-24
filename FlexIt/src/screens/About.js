@@ -3,9 +3,14 @@ import {View,Text,ScrollView,StyleSheet,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Profile from '../components/Profile';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function About(){
+export default function About({setIsLoggedIn}){
   const navigation = useNavigation();
+  const handleLogOut = async () => {
+    await AsyncStorage.removeItem("user")
+    setIsLoggedIn(false)
+  }
   return (
     <SafeAreaView>
       <ScrollView>
@@ -30,8 +35,8 @@ export default function About(){
                 <Text>Refer your friend and get discounts </Text>
                 <View style={{height: 1,width: 250,backgroundColor: 'black',marginVertical: 5}} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.inside}>
-                <Text style={[styles.text,{paddingBottom:10}]}>logout ~ </Text>
+            <TouchableOpacity style={styles.inside} onPress={handleLogOut}>
+                <Text style={[styles.text,{paddingBottom:10}]} >logout ~ </Text>
             </TouchableOpacity>
           </View>
           

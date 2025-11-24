@@ -40,6 +40,7 @@ app.post('/signup', async (req,res)=>{
             password:hashedPass
         }
     })
+    console.log(userSend)
     if(userSend) return res.status(200).json({message:'Successfully created'})
 })
 
@@ -62,6 +63,7 @@ app.post('/login', async (req,res)=>{
     const balancePass = await bcrypt.compare(password,users.password)
 
     if(!balancePass) return res.status(404).json({message: 'Incorrect credentials'})
+    console.log('Login successful',users)
     return res.status(200).json({message: 'Successful login'})
 })
 
