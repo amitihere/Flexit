@@ -1,20 +1,37 @@
 import React,{useState,useContext} from 'react'
-import {View,Text,ScrollView,StyleSheet,TextInput,Image,Dimensions} from 'react-native';
+import {View,Text,ScrollView,StyleSheet,TextInput,Image,Dimensions,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import CompData from '../Data/CompData';
 import { Search,Swords } from 'lucide-react-native';
 import RenderComp, { CompContext } from '../storage/RenderComp';
 import { LocationContext } from '../Extras/Location';
-const { width } = Dimensions.get('window');
+import DropDown from '../Extras/DropDown';
+
+const { width,height } = Dimensions.get('window');
 
 export default function Competition(){
   const {city} = useContext(LocationContext)
-   const [name,setName] = useState('')
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [name,setName] = useState('')
   const comp = CompData()
-  const cityData = city ? comp.filter((t)=> t.state.toLowerCase().trim().includes(city.toLowerCase().trim())): comp
-  const handleName = cityData.filter((t)=> t.title.toLowerCase().trim().includes(name.toLowerCase().trim()))
-  
+let filteredData;
+
+if (selectedCity) {
+  filteredData = comp.filter(t => 
+    t.state.toLowerCase().includes(selectedCity.toLowerCase())
+  );
+} else if (city) {
+  filteredData = comp.filter(t => 
+    t.state.toLowerCase().includes(city.toLowerCase())
+  );
+} else {
+  filteredData = comp;
+}
+
+const handleName = filteredData.filter(t =>
+  t.title.toLowerCase().includes(name.toLowerCase())
+);
   return (
     <CompContext.Provider value={{name,setName,handleName}}>
       <LinearGradient
@@ -34,6 +51,10 @@ export default function Competition(){
                   ACE THE <Swords size={25} color="orange" /> GAME 
                 </Text>
               </View>
+              <Text style={styles.elig}>Currect Location : {city}</Text>
+              <DropDown value={selectedCity} setValue={setSelectedCity} />
+
+              
               <View style={styles.listContainer}>
                 <RenderComp />
               </View>
@@ -97,6 +118,16 @@ titleContainer: {
   },
 
   listContainer: {
-    flex: 1, // <-- gives space to FlatList
+    flex: 1,
+  },
+   elig: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: width * 0.040,
+    letterSpacing: 0.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowRadius: 2,
+    paddingTop: height * 0.02,
   },
 })

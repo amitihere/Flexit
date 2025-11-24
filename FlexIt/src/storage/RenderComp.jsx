@@ -7,15 +7,13 @@ import { LocationContext } from '../Extras/Location';
 export const CompContext = React.createContext();
 const { width, height } = Dimensions.get('window');
 export default function RenderComp(){
-    const DATA = CompData();
     const {city} = useContext(LocationContext)
-    const cityData = city ? DATA.filter((t)=> t.state.toLowerCase().trim().includes(city.toLowerCase().trim())) :DATA
     const {name,setName,handleName} = React.useContext(CompContext);
     
 
   return (
         <FlatList
-        data={name ? handleName : cityData}
+        data={handleName}
         renderItem={({item})=> <Item product = {item}/>}
         keyExtractor={(item)=>item.id}
         showsVerticalScrollIndicator={false}
