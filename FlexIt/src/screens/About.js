@@ -42,6 +42,9 @@ export default function About({setIsLoggedIn}){
           
         </View>
       </ScrollView>
+      <View>
+          <Text style={{fontWeight:'bold',fontSize:15,alignSelf:'center',paddingVertical:15,color:'black'}}>Developed with ❤️ by Amiti Aneesh</Text>
+        </View>
     </SafeAreaView>
   )
 }
