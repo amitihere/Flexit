@@ -16,6 +16,24 @@ export const ExploreComp = [
         image: require('../../assets/Gemini_Generated_Image_1u6c0k1u6c0k1u6c (1).png')
     },
 ]
+export const ExploreSport = [
+  {
+    id: 1,
+    image: require('../../assets/sports-balls.jpg')
+  },
+  {
+    id:2,
+    image: require('../../assets/istockphoto-1278976828-612x612.jpg')
+  },
+  {
+    id:3,
+    image: require('../../assets/best_sports_for_older_adults.webp')
+  },
+  {
+    id:4,
+    image: require('../../assets/download.jpeg')
+  },
+]
 export const faqData = [
   {
     question: "1. How do I register for a competition?",

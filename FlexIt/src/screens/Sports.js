@@ -9,17 +9,36 @@ import {clubs} from '../Data/Book';
 import Booking from '../storage/Booking';
 import { Search,Swords } from 'lucide-react-native';
 import { LocationContext } from '../Extras/Location';
+import DropDownSports from '../Extras/DropDownSports'
 const {width,height} = Dimensions.get('window')
 export default function Sports(){
   
   console.log("successfulllyyy entered sports page")
 
   const [title,setTitle] = useState('')
+  const [selectedCity, setSelectedCity] = useState(null);
   const {city} = useContext(LocationContext)
 
-  const cityData = city ? clubs.filter((t)=>t.location.toLowerCase().trim().includes(city.toLowerCase().trim())) : clubs
-  const handleTitle = cityData.filter((t)=> t.name.toLowerCase().trim().includes(title.toLowerCase().trim()))
+  // const cityData = city ? clubs.filter((t)=>t.location.toLowerCase().trim().includes(city.toLowerCase().trim())) : clubs
+  // // const handleTitle = cityData.filter((t)=> t.name.toLowerCase().trim().includes(title.toLowerCase().trim()))
   const [slot,setSlot] = useState([])
+  let filteredData;
+
+if (selectedCity) {
+  filteredData = clubs.filter(t => 
+    t.location.toLowerCase().includes(selectedCity.toLowerCase())
+  );
+} else if (city) {
+  filteredData = clubs.filter(t => 
+    t.location.toLowerCase().includes(city.toLowerCase())
+  );
+} else {
+  filteredData = clubs;
+}
+
+const handleTitle = filteredData.filter(t =>
+  t.name.toLowerCase().includes(title.toLowerCase())
+);
   useEffect(()=> {
     let arr = generateDates(10)
     if(arr.length>0){
@@ -42,7 +61,9 @@ export default function Sports(){
                 <Search size={24} color='black' style={styles.icon}/>
                 <TextInput style={styles.input} placeholder='Search Venues...' onChangeText={setTitle}/>
             </View>
-            <Booking/>
+            <Text style={styles.elig}>Currect Location : {city}</Text>
+            <DropDownSports value={selectedCity} setValue={setSelectedCity} />
+            <Booking data ={handleTitle}/>
           </View>
           
         </SafeAreaView>

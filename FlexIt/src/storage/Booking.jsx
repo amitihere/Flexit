@@ -9,16 +9,11 @@ import { LocationContext } from '../Extras/Location';
 const { width } = Dimensions.get('window');
 
 export const BookingContext = React.createContext();
-export default function Booking(){
-
-  const {title,setTitle,handleTitle} = useContext(BookingContext)
-  const {city} = useContext(LocationContext)
-
-  const cityData = city ? clubs.filter((t)=>t.location.toLowerCase().trim().includes(city.toLowerCase().trim())) : clubs
+export default function Booking({data}){
   return (
     <View >
         <FlatList
-            data={title? handleTitle : cityData}
+            data={data}
             renderItem={({item})=> <Item product = {item}/>}
             keyExtractor={(item)=>item.id}
             showsVerticalScrollIndicator={false}

@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,Text,StyleSheet,FlatList,Image} from 'react-native'
-import { ExploreComp } from '../Data/ExploreComp'
+import { ExploreComp,ExploreSport } from '../Data/ExploreComp'
 import LottieView from 'lottie-react-native';
 export function HomeCompAttributes(){
     const Item = ({product}) => {
@@ -56,7 +56,7 @@ export function HomeSportAttributes(){
         </View>
         <View style={styles.flat}>
             <FlatList
-            data = {ExploreComp}
+            data = {ExploreSport}
             renderItem={({item})=> <Item product={item}/>}
             keyExtractor={item=>item.id}
             showsHorizontalScrollIndicator = {false}
