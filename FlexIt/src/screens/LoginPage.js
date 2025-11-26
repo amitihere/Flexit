@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground,TouchableOpacity,Dimensions} from 'react-native'
+import { ArrowLeft } from 'lucide-react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const {width,height} = Dimensions.get('window')
@@ -74,6 +75,9 @@ export default function LoginPage({setIsLoggedIn}){
   return (
     <ImageBackground source={require('../../assets/Gemini_Generated_Image_b2ecoib2ecoib2ec.png')} style={{flex:1,width:'100%',height:'100%'}} resizeMode='cover'>
         <View style={styles.container}>
+        {status == false && <TouchableOpacity style={styles.backButton} onPress={() => setStatus(true)}>
+                <ArrowLeft size={24} color="#fff" />
+            </TouchableOpacity>}
             <View style={[styles.box,{height: status ? height*0.35 : height*0.40}]}>
                 <Text style={{margin:5,fontWeight:'bold',fontSize:20}}>
                     {status?'Login':`Sign Up`}
@@ -153,5 +157,14 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         margin:10
-    }
+    },
+    backButton: {
+        position: 'absolute',
+        top: width*0.23,
+        left: width*0.1,
+        zIndex: 1,
+        backgroundColor: 'rgba(51, 49, 49, 0.5)',
+        padding: 10,
+        borderRadius: 20,
+      },
 })

@@ -18,8 +18,8 @@ export default function LocationScreen({children}){
                 setLocation(userLocation)
 
             const cityLocation = await Location.reverseGeocodeAsync({
-                latitude: location.coords.latitude,
-                longitude: location.coords.longitude
+                latitude: userLocation.coords.latitude,
+                longitude: userLocation.coords.longitude
             })
             console.log(cityLocation[0])
             setCity(cityLocation[0].region)
