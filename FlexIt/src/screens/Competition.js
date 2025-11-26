@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import {View,Text,ScrollView,StyleSheet,TextInput,Image,Dimensions,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -14,7 +14,15 @@ export default function Competition(){
   const {city} = useContext(LocationContext)
   const [selectedCity, setSelectedCity] = useState(null);
   const [name,setName] = useState('')
+  const [time,setTime] = useState(false)
   const comp = CompData()
+  useEffect(()=>{
+    const id = setTimeout(()=>{
+      setTime(true)
+    },2000)
+
+    return () => clearTimeout(id)
+  },[])
 let filteredData;
 
 if (selectedCity) {
@@ -41,7 +49,7 @@ const handleName = filteredData.filter(t =>
         end={{ x: 1, y: 1 }}
       >
           <SafeAreaView style={{flex:1}}>
-            <View style={styles.container}>
+           {time?( <View style={styles.container}>
               <View style={styles.inputBox}>
                 <Search size={24} color='black' style={styles.icon}/>
                 <TextInput style={styles.input} placeholder='Search Sport...' onChangeText={setName}/>
@@ -58,7 +66,9 @@ const handleName = filteredData.filter(t =>
               <View style={styles.listContainer}>
                 <RenderComp />
               </View>
-            </View>
+            </View>):(<View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+              <Text style={styles.titleText}>Sorry for the wait , we want to give you the best experience!</Text>
+            </View>)}
           </SafeAreaView>
         </LinearGradient>
       </CompContext.Provider>

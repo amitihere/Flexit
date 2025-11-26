@@ -1,8 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import {View,Text,TextInput,Button,StyleSheet,ScrollView,ImageBackground,TouchableOpacity,Dimensions} from 'react-native'
 import { ArrowLeft } from 'lucide-react-native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NetworkInfo } from "react-native-network-info";
+const BASE_URL = `http://${NetworkInfo.getIPAddress()}:3000`;
 const {width,height} = Dimensions.get('window')
 export default function LoginPage({setIsLoggedIn}){
     const [name,setName] = useState('')
@@ -45,7 +46,7 @@ export default function LoginPage({setIsLoggedIn}){
         console.log(status ? sentData : signData)
         try {
             console.log("Sending request...");
-            const response = await fetch(`http://192.168.143.131:3000/${route}`, {
+            const response = await fetch(`http://Amitis-MacBook-Pro.local:3000/${route}`, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(status ? sentData : signData)
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     },
     type: {
         width:width*0.5,
-        height:height*0.035,
+        height:height*0.040,
         textAlign: 'center',
         borderWidth: 1,
         borderColor: 'grey',
