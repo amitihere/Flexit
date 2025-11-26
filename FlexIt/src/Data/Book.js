@@ -8,356 +8,556 @@ const defaultTimings = [
   "07:00 PM - 08:00 PM"
 ];
 export const clubs = [
-
-
   {
     id: 1,
-    name: 'Nimbalkar Sports Club',
-    location: 'San Francisco',
-    price: 200,
+    name: "Mumbai Smash Sports Club",
+    location: "Mumbai",
+    price: 300,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 10,
-    rating: 4.0,
-    reviews: 150,
-    sports: ['badminton', 'cricket', 'volleyball'],
-
-    Detaillocation: '123 Bay Street, near Marina District, San Francisco, CA.\nOpposite Blue Bottle Coffee.',
-
-    Amenities: ['Parking Facility', 'Locker Rooms', 'Equipment Rental', 'Cafeteria'],
-
-    description:'A premium sports facility in San Francisco offering access to badminton courts, cricket nets, and volleyball grounds.',
-
-    courts: { badminton: 6, cricket: 1, volleyball: 3 },
-
-    timings: {
-      badminton: defaultTimings,
-      cricket: defaultTimings,
-      volleyball: defaultTimings
-    },
-
-    buying: {
-      badminton: 400,
-      cricket: 900,
-      volleyball: 200
-    }
+    discount: 12,
+    rating: 4.5,
+    reviews: 280,
+    sports: ["badminton", "cricket", "volleyball"],
+    Detaillocation: "Carter Road Sports Arena, Bandra West, Mumbai",
+    Amenities: ["Parking Facility", "Locker Rooms", "Cafeteria"],
+    description: "A versatile sports club with facilities for badminton, cricket and volleyball.",
+    courts: { badminton: 5, cricket: 1, volleyball: 2 },
+    timings: { badminton: defaultTimings, cricket: defaultTimings, volleyball: defaultTimings },
+    buying: { badminton: 500, cricket: 850, volleyball: 300 }
   },
-
 
   {
     id: 2,
-    name: 'Power Smash Arena',
-    location: 'San Francisco',
-    price: 250,
+    name: "Bangalore Power Smash Arena",
+    location: "Bengaluru",
+    price: 260,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
     discount: 15,
     rating: 4.7,
-    reviews: 230,
-    sports: ['badminton'],
-
-    Detaillocation:'4th Street Sports Complex, Downtown San Francisco.\nNext to Salesforce Tower.',
-
-    Amenities: ['Changing Rooms', 'Snack Bar', 'AC Courts', 'Coaching Available'],
-
-    description:'A modern AC badminton facility with professional coaching and premium synthetic courts.',
-
-    courts: { badminton: 8 },
-
-    timings: {
-      badminton: defaultTimings
-    },
-
-    buying: { badminton: 500 }
+    reviews: 350,
+    sports: ["badminton"],
+    Detaillocation: "Jayanagar 9th Block Indoor Stadium, Bengaluru",
+    Amenities: ["Changing Rooms", "AC Courts", "Coaching Available"],
+    description: "Fully air-conditioned badminton courts with professional coaching.",
+    courts: { badminton: 10 },
+    timings: { badminton: defaultTimings },
+    buying: { badminton: 550 }
   },
-
 
   {
     id: 3,
-    name: 'Victory Turf',
-    location: 'San Francisco',
-    price: 300,
+    name: "Chennai Victory Turf",
+    location: "Chennai",
+    price: 310,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 5,
-    rating: 3.5,
-    reviews: 180,
-    sports: ['football', 'cricket'],
-
-    Detaillocation:'Mission District Sports Park, San Francisco.\nBeside Dolores Park.',
-
-    Amenities: ['Floodlights', 'Restrooms', 'Seating Area', 'Refreshment Stall'],
-
-    description:'Large turf for football and cricket training with floodlights for night sports.',
-
+    discount: 8,
+    rating: 3.8,
+    reviews: 240,
+    sports: ["football", "cricket"],
+    Detaillocation: "ECR Sports Complex, Chennai",
+    Amenities: ["Floodlights", "Seating Area", "Refreshment Stall"],
+    description: "Large outdoor turf for football & cricket training.",
     courts: { football: 1, cricket: 2 },
-
-    timings: {
-      football: defaultTimings,
-      cricket: defaultTimings
-    },
-
-    buying: {
-      football: 700,
-      cricket: 650
-    }
+    timings: { football: defaultTimings, cricket: defaultTimings },
+    buying: { football: 750, cricket: 620 }
   },
 
   {
     id: 4,
-    name: 'Skyline Fitness Zone',
-    location: 'Chandigarh',
-    price: 180,
+    name: "Kolkata Skyline Fitness Zone",
+    location: "Kolkata",
+    price: 210,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 20,
-    rating: 4.8,
+    discount: 18,
+    rating: 4.6,
     reviews: 310,
-    sports: ['gym', 'yoga'],
-
-    Detaillocation:'SCO 102, Sector 34A, Chandigarh.\nOpposite Piccadilly Square Mall.',
-
-    Amenities: ['Personal Trainers', 'Steam Room', 'Diet Consultation', 'Showers'],
-
-    description:'An advanced gym and yoga center offering elite fitness training.',
-
+    sports: ["gym", "yoga"],
+    Detaillocation: "Salt Lake Sector 5 Sports Tower, Kolkata",
+    Amenities: ["Personal Trainers", "Steam Room", "Diet Consultation"],
+    description: "Modern gym & yoga studio with elite fitness trainers.",
     courts: { gym: null, yoga: null },
-
-    timings: {
-      gym: defaultTimings,
-      yoga: defaultTimings
-    },
-
-    buying: {
-      gym: 300,
-      yoga: 150
-    }
+    timings: { gym: defaultTimings, yoga: defaultTimings },
+    buying: { gym: 320, yoga: 180 }
   },
 
   {
     id: 5,
-    name: 'Ace Tennis Academy',
-    location: 'San Francisco',
+    name: "Delhi Ace Tennis Academy",
+    location: "Delhi",
     price: 350,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 10,
-    rating: 2.6,
-    reviews: 275,
-    sports: ['tennis'],
-
-    Detaillocation:"Lombard Street Courts, San Francisco.\nClose to Fisherman's Wharf.",
-
-    Amenities: ['Professional Tennis Coaching', 'Parking', 'Equipment Store'],
-
-    description:'A tennis academy with clay courts and experienced coaching staff.',
-
+    discount: 9,
+    rating: 3.4,
+    reviews: 270,
+    sports: ["tennis"],
+    Detaillocation: "RK Puram Tennis Complex, New Delhi",
+    Amenities: ["Clay Courts", "Coaching Campus", "Equipment Store"],
+    description: "Clay court tennis academy with tournament-level trainers.",
     courts: { tennis: 4 },
-
-    timings: {
-      tennis: defaultTimings
-    },
-
-    buying: { tennis: 550 }
+    timings: { tennis: defaultTimings },
+    buying: { tennis: 600 }
   },
-
 
   {
     id: 6,
-    name: 'Rising Hoop Center',
-    location: 'San Francisco',
-    price: 220,
+    name: "Hyderabad Hoop Center",
+    location: "Hyderabad",
+    price: 240,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 12,
-    rating: 3.4,
-    reviews: 190,
-    sports: ['basketball', 'gym'],
-
-    Detaillocation:'Bayview Arena, San Francisco.\nNear Oracle Park.',
-
-    Amenities: ['Indoor Court', 'Locker Facility', 'Snack Corner', 'Water Fountain'],
-
-    description:'Indoor basketball court with gym access and strength training options.',
-
+    discount: 14,
+    rating: 4.0,
+    reviews: 210,
+    sports: ["basketball", "gym"],
+    Detaillocation: "Gachibowli Indoor Arena, Hyderabad",
+    Amenities: ["Locker Facility", "Snack Corner", "Water Fountain"],
+    description: "Indoor basketball hall with gym access included.",
     courts: { basketball: 1, gym: null },
-
-    timings: {
-      basketball: defaultTimings,
-      gym: defaultTimings
-    },
-
-    buying: {
-      basketball: 300,
-      gym: 200
-    }
+    timings: { basketball: defaultTimings, gym: defaultTimings },
+    buying: { basketball: 320, gym: 210 }
   },
-
 
   {
     id: 7,
-    name: 'Speed Racers Track',
-    location: 'San Francisco',
-    price: 400,
+    name: "Ahmedabad Speed Track",
+    location: "Ahmedabad",
+    price: 430,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 8,
-    rating: 4.2,
-    reviews: 140,
-    sports: ['athletics', 'cycling'],
-
-    Detaillocation:'Presidio Training Ground, San Francisco.\nNear Golden Gate Bridge.',
-
-    Amenities: ['Track Lighting', 'Rest Area', 'First Aid', 'Parking'],
-
-    description:'A premium track for speed training, running, and cycling practice.',
-
-    courts: { athletics: 1, cycling: 1 },
-
-    timings: {
-      athletics: defaultTimings,
-      cycling: defaultTimings
-    },
-
-    buying: {
-      athletics: 450,
-      cycling: 500
-    }
+    discount: 7,
+    rating: 4.3,
+    reviews: 165,
+    sports: ["athletics"],
+    Detaillocation: "Sardar Patel Sports Enclave, Ahmedabad",
+    Amenities: ["Track Lighting", "Rest Area", "First Aid"],
+    description: "A high-performance track for competitive athletics.",
+    courts: { athletics: 1 },
+    timings: { athletics: defaultTimings },
+    buying: { athletics: 460 }
   },
-
 
   {
     id: 8,
-    name: 'Ocean View Swimming Club',
-    location: 'Goa',
-    price: 280,
+    name: "Goa Ocean View Aquatic Club",
+    location: "Goa",
+    price: 320,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
-    discount: 18,
+    discount: 20,
     rating: 4.9,
-    reviews: 320,
-    sports: ['swimming', 'water-polo', 'diving'],
-
-    Detaillocation:'Beachside Lane, Calangute Beach Road, Goa.\nOpposite Golden Sands Resort.',
-
-    Amenities: ['Changing Rooms', 'Lifeguards', 'Café', 'Showers'],
-
-    description:'A seaside aquatic sports club with swimming, diving, and water polo facilities.',
-
-    courts: { swimming: 1, 'water-polo': 1, diving: 1 },
-
-    timings: {
-      swimming: defaultTimings,
-      'water-polo': defaultTimings,
-      diving: defaultTimings
-    },
-
-    buying: {
-      swimming: 350,
-      'water-polo': 450,
-      diving: 600
-    }
+    reviews: 390,
+    sports: ["swimming"],
+    Detaillocation: "Calangute Coastal Arena, Goa",
+    Amenities: ["Lifeguards", "Café", "Showers"],
+    description: "A premier aquatic sports club offering swimming lanes for professional training.",
+    courts: { swimming: 1 },
+    timings: { swimming: defaultTimings },
+    buying: { swimming: 360 }
   },
-
 
   {
     id: 9,
-    name: 'Pinnacle Boxing Academy',
-    location: 'San Francisco',
-    price: 260,
+    name: "Pune Pinnacle Boxing Academy",
+    location: "Pune",
+    price: 270,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
     discount: 10,
     rating: 5.0,
-    reviews: 210,
-    sports: ['boxing', 'fitness', 'mma'],
-
-    Detaillocation:'SoMa Combat Training Center, San Francisco.\nNext to Moscone Center.',
-
-    Amenities: ['Boxing Ring', 'Personal Training', 'Protein Bar'],
-
-    description:'A combat sports academy offering MMA, boxing, and fitness training.',
-
-    courts: { boxing: 1, fitness: null, mma: 1 },
-
-    timings: {
-      boxing: defaultTimings,
-      fitness: defaultTimings,
-      mma: defaultTimings
-    },
-
-    buying: {
-      boxing: 450,
-      fitness: 300,
-      mma: 550
-    }
+    reviews: 260,
+    sports: ["boxing"],
+    Detaillocation: "Balewadi Combat Center, Pune",
+    Amenities: ["Boxing Ring", "Protein Bar", "Personal Training"],
+    description: "A premium combat sports academy specialising in boxing.",
+    courts: { boxing: 1 },
+    timings: { boxing: defaultTimings },
+    buying: { boxing: 470 }
   },
-
 
   {
     id: 10,
-    name: 'Mountain Peak Yoga Center',
-    location: 'Manali',
-    price: 150,
+    name: "Manali Peak Yoga Retreat",
+    location: "Manali",
+    price: 160,
     images: [
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
-      require('../../assets/images (1) (1).jpg'),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
     ],
     discount: 25,
+    rating: 3.8,
+    reviews: 330,
+    sports: ["yoga"],
+    Detaillocation: "Old Manali Mountain Retreat Campus",
+    Amenities: ["Spa Therapy", "Nature Walk Area", "Mountain View"],
+    description: "Peaceful yoga center surrounded by nature.",
+    courts: { yoga: null },
+    timings: { yoga: defaultTimings },
+    buying: { yoga: 210 }
+  },
+
+  {
+    id: 11,
+    name: "Jaipur Desert Sports Arena",
+    location: "Rajasthan",
+    price: 250,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 14,
+    rating: 4.1,
+    reviews: 220,
+    sports: ["cricket", "tennis"],
+    Detaillocation: "Mansarovar Sports Ground, Jaipur",
+    Amenities: ["Parking Facility", "Cafeteria", "Floodlights"],
+    description: "Outdoor stadium offering world-class cricket turf and clay tennis courts.",
+    courts: { cricket: 2, tennis: 3 },
+    timings: { cricket: defaultTimings, tennis: defaultTimings },
+    buying: { cricket: 700, tennis: 580 }
+  },
+
+  {
+    id: 12,
+    name: "Amritsar Golden Smash Club",
+    location: "Punjab",
+    price: 230,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 16,
+    rating: 4.4,
+    reviews: 260,
+    sports: ["badminton", "gym"],
+    Detaillocation: "Ranjit Avenue Sports Arena, Amritsar",
+    Amenities: ["AC Courts", "Personal Trainers", "Locker Room"],
+    description: "Premium badminton club with gym access for members.",
+    courts: { badminton: 7, gym: null },
+    timings: { badminton: defaultTimings, gym: defaultTimings },
+    buying: { badminton: 530, gym: 260 }
+  },
+
+  {
+    id: 13,
+    name: "Gurugram Hoop & Fitness Arena",
+    location: "Haryana",
+    price: 260,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 11,
+    rating: 4.2,
+    reviews: 310,
+    sports: ["basketball"],
+    Detaillocation: "Sector 29 City Sports Arena, Gurugram",
+    Amenities: ["Indoor Court", "Protein Bar", "Showers"],
+    description: "Indoor basketball facility with high-performance court.",
+    courts: { basketball: 1 },
+    timings: { basketball: defaultTimings },
+    buying: { basketball: 310 }
+  },
+
+  {
+    id: 14,
+    name: "Kochi Backwater Aquatics Club",
+    location: "Kerala",
+    price: 300,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 17,
+    rating: 4.8,
+    reviews: 380,
+    sports: ["swimming"],
+    Detaillocation: "Marine Drive Sports Complex, Kochi",
+    Amenities: ["Lifeguards", "Changing Rooms", "Cafeteria"],
+    description: "Professional aquatic club offering swimming lanes for all skill levels.",
+    courts: { swimming: 1 },
+    timings: { swimming: defaultTimings },
+    buying: { swimming: 370 }
+  },
+
+  {
+    id: 15,
+    name: "Lucknow Warriors Sports Club",
+    location: "Uttar Pradesh",
+    price: 240,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 13,
+    rating: 4.0,
+    reviews: 200,
+    sports: ["cricket", "volleyball"],
+    Detaillocation: "Gomti Nagar Sports City, Lucknow",
+    Amenities: ["Seating Area", "Floodlights", "Restrooms"],
+    description: "Cricket turf and sand volleyball court for casual and competitive play.",
+    courts: { cricket: 1, volleyball: 2 },
+    timings: { cricket: defaultTimings, volleyball: defaultTimings },
+    buying: { cricket: 640, volleyball: 270 }
+  },
+
+  {
+    id: 16,
+    name: "Indore Ace Badminton Center",
+    location: "Madhya Pradesh",
+    price: 220,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 10,
+    rating: 4.3,
+    reviews: 250,
+    sports: ["badminton"],
+    Detaillocation: "Vijay Nagar Indoor Court Complex, Indore",
+    Amenities: ["AC Courts", "Coaching", "Equipment Rental"],
+    description: "Synthetic badminton courts with elite coaching programs.",
+    courts: { badminton: 8 },
+    timings: { badminton: defaultTimings },
+    buying: { badminton: 520 }
+  },
+
+  {
+    id: 17,
+    name: "Patna Elite Gym & Wellness Club",
+    location: "Bihar",
+    price: 200,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 12,
+    rating: 3.9,
+    reviews: 230,
+    sports: ["gym", "yoga"],
+    Detaillocation: "Bailey Road Fitness Arena, Patna",
+    Amenities: ["Personal Trainers", "Steam Room", "Locker Rooms"],
+    description: "High-quality fitness and yoga training with professional instructors.",
+    courts: { gym: null, yoga: null },
+    timings: { gym: defaultTimings, yoga: defaultTimings },
+    buying: { gym: 290, yoga: 160 }
+  },
+
+  {
+    id: 18,
+    name: "Bhubaneswar Smash Courts",
+    location: "Odisha",
+    price: 210,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 8,
     rating: 3.7,
-    reviews: 350,
-    sports: ['yoga', 'meditation', 'stretching'],
+    reviews: 180,
+    sports: ["badminton", "volleyball"],
+    Detaillocation: "Kalinga Sports Complex, Bhubaneswar",
+    Amenities: ["Cafeteria", "Restrooms", "Coaching Available"],
+    description: "A multi-sport arena for badminton and volleyball enthusiasts.",
+    courts: { badminton: 6, volleyball: 2 },
+    timings: { badminton: defaultTimings, volleyball: defaultTimings },
+    buying: { badminton: 490, volleyball: 250 }
+  },
 
-    Detaillocation:'Hilltop Retreat, Old Manali Road, Manali.\nFacing the Beas River.',
+  {
+    id: 19,
+    name: "Guwahati Highland Boxing Hub",
+    location: "Assam",
+    price: 260,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 9,
+    rating: 4.4,
+    reviews: 220,
+    sports: ["boxing"],
+    Detaillocation: "Beltola Combat Arena, Guwahati",
+    Amenities: ["Boxing Ring", "First Aid", "Protein Corner"],
+    description: "A professional combat training club with certified coaches.",
+    courts: { boxing: 1 },
+    timings: { boxing: defaultTimings },
+    buying: { boxing: 450 }
+  },
 
-    Amenities: ['Mountain View', 'Spa Therapy', 'Nature Walk Area'],
+  {
+    id: 20,
+    name: "Ranchi Central Cricket & Football Arena",
+    location: "Jharkhand",
+    price: 290,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 11,
+    rating: 4.1,
+    reviews: 210,
+    sports: ["cricket", "football"],
+    Detaillocation: "Morabadi Sports Ground, Ranchi",
+    Amenities: ["Floodlights", "Audience Seating", "Water Station"],
+    description: "A multipurpose ground for high-intensity football & cricket sessions.",
+    courts: { cricket: 1, football: 1 },
+    timings: { cricket: defaultTimings, football: defaultTimings },
+    buying: { cricket: 660, football: 720 }
+  },
 
-    description:'A peaceful yoga and meditation retreat located in the mountains.',
+  {
+    id: 21,
+    name: "Raipur Steel City Fitness Arena",
+    location: "Chhattisgarh",
+    price: 200,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 15,
+    rating: 3.8,
+    reviews: 190,
+    sports: ["gym", "volleyball"],
+    Detaillocation: "Telibandha Lakeview Sports Hub, Raipur",
+    Amenities: ["Personal Trainers", "Locker Rooms", "Protein Shakes"],
+    description: "Gym and volleyball courts suitable for both fitness and recreation.",
+    courts: { gym: null, volleyball: 2 },
+    timings: { gym: defaultTimings, volleyball: defaultTimings },
+    buying: { gym: 250, volleyball: 220 }
+  },
 
-    courts: { yoga: null, meditation: null, stretching: null },
+  {
+    id: 22,
+    name: "Dehradun Mountain Athletics Club",
+    location: "Uttarakhand",
+    price: 260,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 16,
+    rating: 4.3,
+    reviews: 240,
+    sports: ["athletics", "yoga"],
+    Detaillocation: "Rajpur Road Sports Park, Dehradun",
+    Amenities: ["Track Lighting", "Spa Therapy", "Parking Lot"],
+    description: "A holistic training center blending athletics with recovery yoga.",
+    courts: { athletics: 1, yoga: null },
+    timings: { athletics: defaultTimings, yoga: defaultTimings },
+    buying: { athletics: 490, yoga: 170 }
+  },
 
-    timings: {
-      yoga: defaultTimings,
-      meditation: defaultTimings,
-      stretching: defaultTimings
-    },
+  {
+    id: 23,
+    name: "Srinagar Valley Aquatic & Gym Club",
+    location: "Jammu & Kashmir",
+    price: 250,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 10,
+    rating: 4.2,
+    reviews: 260,
+    sports: ["swimming", "gym"],
+    Detaillocation: "Dal Lake Boulevard Sports Arena, Srinagar",
+    Amenities: ["Café", "Showers", "Locker Rooms"],
+    description: "A lakeside modern club offering swimming pool access and gym workout.",
+    courts: { swimming: 1, gym: null },
+    timings: { swimming: defaultTimings, gym: defaultTimings },
+    buying: { swimming: 350, gym: 260 }
+  },
 
-    buying: {
-      yoga: 200,
-      meditation: 180,
-      stretching: 120
-    }
+  {
+    id: 24,
+    name: "Imphal Smash Badminton & Table Arena",
+    location: "Manipur",
+    price: 230,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 12,
+    rating: 4.1,
+    reviews: 195,
+    sports: ["badminton", "volleyball"],
+    Detaillocation: "Thangmeiband Sports Court, Imphal",
+    Amenities: ["Parking", "Cafeteria", "Coaching"],
+    description: "Indoor badminton and outdoor volleyball courts for multi-sport athletes.",
+    courts: { badminton: 6, volleyball: 2 },
+    timings: { badminton: defaultTimings, volleyball: defaultTimings },
+    buying: { badminton: 510, volleyball: 250 }
+  },
+
+  {
+    id: 25,
+    name: "Shillong Pine Peak Fitness & Boxing Club",
+    location: "Meghalaya",
+    price: 240,
+    images: [
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+      require("../../assets/images (1) (1).jpg"),
+    ],
+    discount: 14,
+    rating: 4.5,
+    reviews: 225,
+    sports: ["boxing"],
+    Detaillocation: "Laitumkhrah Sports Center, Shillong",
+    Amenities: ["Protein Bar", "First Aid", "Personal Coaching"],
+    description: "Boxing arena located in the hills of Shillong for all-level athletes.",
+    courts: { boxing: 1 },
+    timings: { boxing: defaultTimings },
+    buying: { boxing: 460 }
   }
 ];
-
 
 export const sportIcons = {
   badminton: 'badminton',

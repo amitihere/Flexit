@@ -34,13 +34,17 @@ export default function LoginPage({setIsLoggedIn}){
     const handleSave = async () => {
         const route = status ? "login": "signup";
         console.log(route)
-        const emailRecheck = email.includes("@") && email.lastIndexOf(".") > email.indexOf("@");
-        if (!emailRecheck) return alert('Invalid email format')
+        if (route === "signup"){
+            const emailRecheck = email.includes("@") && email.lastIndexOf(".") > email.indexOf("@");
+            if (!emailRecheck) return alert('Invalid email format')
+
+        }
+        
         
         console.log(status ? sentData : signData)
         try {
             console.log("Sending request...");
-            const response = await fetch(`http://localhost:3000/${route}`, {
+            const response = await fetch(`http://192.168.143.131:3000/${route}`, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(status ? sentData : signData)
@@ -49,7 +53,7 @@ export default function LoginPage({setIsLoggedIn}){
             const res = await response.json();
             console.log("Response:", res);
             if (response.status === 200) {
-                await AsyncStorage.setItem("user", JSON.stringify(name)); // store user details
+                await AsyncStorage.setItem("user", JSON.stringify(name));
                 setIsLoggedIn(true);
             }
             else{
@@ -57,7 +61,7 @@ export default function LoginPage({setIsLoggedIn}){
             }
 
             } catch (err) {
-            console.log("Fetch Error:", err);
+            console.log("error", err);
             }
     }
 

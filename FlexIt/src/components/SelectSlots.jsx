@@ -51,7 +51,10 @@ const handleTimeSelect = (time) => {
 
 
   return (
-        <ScrollView contentContainerStyle={{ paddingBottom: 100,flexGrow: 1 }}>
+    <ScrollView
+    contentContainerStyle={{ paddingBottom: height * 0.25 }} // gives space for button
+    showsVerticalScrollIndicator={false}
+  >
           <View>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {slot.map((data,index)=>(
@@ -110,23 +113,26 @@ const handleTimeSelect = (time) => {
           </View>
         )}
         {selectedTimes.length > 0 && (
-          <TouchableOpacity
-            style={styles.payBtn}
-            onPress={() =>
-              navigation.navigate('Payment', {
-                info,
-                payCourt,
-                play,
-                selectedTimes
-              })
-            }
-          >
-            <Text style={styles.payText}>BOOK</Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity
+              style={styles.payBtn}
+              onPress={() =>
+                navigation.navigate('Payment', {
+                  info,
+                  payCourt,
+                  play,
+                  selectedTimes
+                })
+              }
+            >
+              <Text style={styles.payText}>BOOK</Text>
+            </TouchableOpacity>
+          </View>
         )}
 
 
         </ScrollView>
+        
       
   )
 }
@@ -255,7 +261,16 @@ payText: {
   fontSize: width * 0.040,
   fontWeight: 'bold',
   textAlign:'center'
+},
+payContainer: {
+  position: 'absolute',
+  bottom: 20,
+  left: 0,
+  right: 0,
+  alignItems: 'center',
+  zIndex: 10
 }
+
 
 
 })

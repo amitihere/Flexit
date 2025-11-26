@@ -12,22 +12,19 @@ export default function LocationScreen({children}){
         const getCurrectLocation = async () => {
 
             let { status } = await Location.requestForegroundPermissionsAsync();
-
-            if(status == 'granted'){
-                const userLocation = await Location.getCurrentPositionAsync({});
+            if (status == 'granted'){
+            const userLocation = await Location.getCurrentPositionAsync({});
                 console.log(userLocation)
                 setLocation(userLocation)
 
-                const cityLocation = await Location.reverseGeocodeAsync({
-                    latitude: userLocation.coords.latitude,
-                    longitude: userLocation.coords.longitude
-                })
-                setCity(cityLocation[0].city)
-
-            }
-                
-
+            const cityLocation = await Location.reverseGeocodeAsync({
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude
+            })
+            console.log(cityLocation[0])
+            setCity(cityLocation[0].region)
         }
+    }
         getCurrectLocation()
     },[])
 

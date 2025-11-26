@@ -68,7 +68,7 @@ app.post('/login', async (req,res)=>{
 })
 
 
-app.listen(PORT,()=>{
-    console.log(`Server is listening on the given ${PORT}`)
-
-})
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is listening on ${PORT}`);
+  });
+  
