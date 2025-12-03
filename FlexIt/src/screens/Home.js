@@ -80,7 +80,7 @@ export default function Home() {
                       source={require('../../assets/Live collaboration-rafiki (1).png')}
                       style={{height:100,width:150,alignSelf:'center',marginBottom:'auto'}}
                     />
-                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("AddVenue")}>
+                    <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Admin")}>
                       <Text style={styles.text}>Add Venue</Text>
                     </TouchableOpacity>
                   </View>
