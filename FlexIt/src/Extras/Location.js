@@ -1,45 +1,62 @@
 import React,{useState,useEffect,createContext} from 'react';
-import {View,Text,StyleSheet} from 'react-native'
+import {View,Text,ActivityIndicator,StyleSheet,Linking, Platform } from 'react-native'
 import * as Location from 'expo-location';
 
-export const LocationContext = createContext()
-export default function LocationScreen({children}){
+export const LocationContext = createContext();
 
-    const [location,setLocation] = useState(null)
-    const [city,setCity] = useState(null)
+export default function LocationScreen({ children }) {
+  const [city, setCity] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        const getCurrectLocation = async () => {
+  useEffect(() => {
+    const getCurrentLocation = async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
 
-            let { status } = await Location.requestForegroundPermissionsAsync();
-            if (status == 'granted'){
-            const userLocation = await Location.getCurrentPositionAsync({});
-                console.log(userLocation)
-                setLocation(userLocation)
+        if (status !== "granted") {
+        alert("Location permission is required. Please enable it in Settings.");
 
-            const cityLocation = await Location.reverseGeocodeAsync({
-                latitude: userLocation.coords.latitude,
-                longitude: userLocation.coords.longitude
-            })
-            console.log(cityLocation[0])
-            setCity(cityLocation[0].region)
+        if (Platform.OS === "ios") {
+            Linking.openURL("app-settings:");
+        } else {
+            IntentLauncher.startActivityAsync(
+            IntentLauncher.ActivityAction.LOCATION_SOURCE_SETTINGS
+            );
         }
-    }
-        getCurrectLocation()
-    },[])
+        return;
+        }
+      const userLocation = await Location.getCurrentPositionAsync({});
+      const cityLocation = await Location.reverseGeocodeAsync({
+        latitude: userLocation.coords.latitude,
+        longitude: userLocation.coords.longitude
+      });
 
+      setCity(cityLocation[0].region);
+      setLoading(false);
+    };
 
+    getCurrentLocation();
+  }, []);
+
+  if (loading) {
     return (
-        <LocationContext.Provider value={{city}}>
-            {children}
-        </LocationContext.Provider>
-    )
+      <View style={styles.center}>
+        <ActivityIndicator size="large" color="black" />
+        <Text style={{marginTop:10}}>Requesting Location Permission...</Text>
+      </View>
+    );
+  }
+
+  return (
+    <LocationContext.Provider value={{ city }}>
+      {children}
+    </LocationContext.Provider>
+  );
 }
+
 const styles = StyleSheet.create({
-    text: {
-        fontSize:15,
-        color: 'white',
-        fontWeight:'bold',
-        textShadowRadius: 2
-    }
-})
+  center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});

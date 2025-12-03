@@ -55,92 +55,79 @@ export default function Payment({route}){
         </SafeAreaView>
     </LinearGradient>
   )
-}
-const styles = StyleSheet.create({
-    container: {
+}const styles = StyleSheet.create({
+  container: {
     flex: 1,
-    paddingHorizontal: 19,
+    paddingHorizontal: width * 0.045,
   },
+
   backButton: {
     position: 'absolute',
-    top: 40,
-    left: 10,
+    top: height * 0.045,
+    left: width * 0.02,
     zIndex: 1,
     backgroundColor: 'rgba(51, 49, 49, 0.5)',
-    padding: 8,
-    borderRadius: 20,
+    padding: width * 0.025,
+    borderRadius: width * 0.07,
   },
+
   title: {
-    fontSize: 24,
+    fontSize: width * 0.065,
     fontWeight: 'bold',
     color: '#fff',
-    marginVertical: 20,
-    alignSelf:'center'
+    marginVertical: height * 0.02,
+    alignSelf: 'center',
   },
-  box:{
-    width: width * 0.8,
-    height: height * 0.23,
-    backgroundColor:'#a0a78eff',
-    marginVertical:25,
-    borderRadius:12,
-    padding:5,
-    overflow:'hidden',
-    alignSelf:'center'
+
+  box: {
+    width: width * 0.88,
+    minHeight: height * 0.25,
+    backgroundColor: '#a0a78eff',
+    marginVertical: height * 0.03,
+    borderRadius: width * 0.035,
+    paddingVertical: height * 0.02,
+    paddingHorizontal: width * 0.03,
+    alignSelf: 'center',
   },
+
   divider: {
     height: 1,
     backgroundColor: '#eae8e8ff',
     width: '95%',
     alignSelf: 'center',
-    marginVertical: height * 0.01,
+    marginVertical: height * 0.015,
     opacity: 0.7,
   },
-  sportText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: width * 0.040,
-    letterSpacing: 0.5,
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
-    textShadowRadius: 2,
-    paddingTop: height * 0.03,
-  },
-  title: {
-    fontSize: width * 0.059,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginVertical: 2,
-    alignSelf:'center'
-  },
+
   elig: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: width * 0.035,
-    letterSpacing: 0.5,
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
-    textShadowRadius: 2,
-    margin:5
+    fontSize: width * 0.043,
+    letterSpacing: 0.3,
+    marginVertical: height * 0.005,
   },
+
   block: {
-  backgroundColor: '#5e7860ff',
-  width:width*0.60,
-  height: height * 0.08,
-  opacity:0.9,
-  margin:10,
-  borderRadius:12,
-  alignSelf:'center',
-  justifyContent:'center'
-},
-textSelect : {
-    fontWeight:'bold',
-    color:'white',
-    justifyContent:'center',
-    textAlign:'center'
+    backgroundColor: '#5e7860ff',
+    width: width * 0.60,
+    height: height * 0.075,
+    marginVertical: height * 0.02,
+    borderRadius: width * 0.035,
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
+
+  textSelect: {
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    fontSize: width * 0.045,
+  },
+
   text: {
-    fontSize: 17,
+    fontSize: width * 0.041,
     color: '#ccc',
-    marginBottom: 5,
-    lineHeight: 24,
+    marginBottom: height * 0.01,
+    lineHeight: height * 0.030,
   },
-})
+});

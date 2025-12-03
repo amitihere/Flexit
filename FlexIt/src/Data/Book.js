@@ -11,7 +11,7 @@ export const clubs = [
   {
     id: 1,
     name: "Mumbai Smash Sports Club",
-    location: "Mumbai",
+    location: "Maharashtra",
     price: 300,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -33,7 +33,7 @@ export const clubs = [
   {
     id: 2,
     name: "Bangalore Power Smash Arena",
-    location: "Bengaluru",
+    location: "Karnataka",
     price: 260,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -55,7 +55,7 @@ export const clubs = [
   {
     id: 3,
     name: "Chennai Victory Turf",
-    location: "Chennai",
+    location: "Tamil Nadu",
     price: 310,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -77,7 +77,7 @@ export const clubs = [
   {
     id: 4,
     name: "Kolkata Skyline Fitness Zone",
-    location: "Kolkata",
+    location: "West Bengal",
     price: 210,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -121,7 +121,7 @@ export const clubs = [
   {
     id: 6,
     name: "Hyderabad Hoop Center",
-    location: "Hyderabad",
+    location: "Telangana",
     price: 240,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -143,7 +143,7 @@ export const clubs = [
   {
     id: 7,
     name: "Ahmedabad Speed Track",
-    location: "Ahmedabad",
+    location: "Gujarat",
     price: 430,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -187,7 +187,7 @@ export const clubs = [
   {
     id: 9,
     name: "Pune Pinnacle Boxing Academy",
-    location: "Pune",
+    location: "Maharashtra",
     price: 270,
     images: [
       require("../../assets/images (1) (1).jpg"),
@@ -209,7 +209,7 @@ export const clubs = [
   {
     id: 10,
     name: "Manali Peak Yoga Retreat",
-    location: "Manali",
+    location: "Himachal Pradesh",
     price: 160,
     images: [
       require("../../assets/images (1) (1).jpg"),

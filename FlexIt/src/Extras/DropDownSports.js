@@ -23,11 +23,11 @@ const DropDownSports = ({ value, setValue }) => {
         labelField="label"
         valueField="value"
         value={value}
-        placeholder="Choose a City"
+        placeholder="Choose a State"
         searchPlaceholder="Search..."
         
         onChange={item => {
-            setValue(item.value); // this updates state
+            setValue(item.value);
           }}
         renderLeftIcon={() => (
         <MapPin

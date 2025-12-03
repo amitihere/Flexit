@@ -1,78 +1,99 @@
-import React from 'react'
+import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {View,Text,ScrollView,StyleSheet,TouchableOpacity} from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import AdminRules from '../Data/AdminRules';
 import { useNavigation } from '@react-navigation/native';
 import { Appbar } from 'react-native-paper';
-export default function Admin (){
-    const rules = AdminRules()
-    const navigation = useNavigation();
+
+export default function Admin() {
+  const rules = AdminRules();
+  const navigation = useNavigation();
+
   return (
-    
-    <SafeAreaView>
-        <Appbar.BackAction onPress={() => navigation.goBack()} />
-        <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.head}>Welcome to the <Text style={{color:'maroon',fontSize:40}}>Admin</Text> ~page~</Text>
-                <View style={styles.card}>
-                    <Text style={styles.regis}>
-                        *Process of Registration*
-                    </Text>
-                    {rules.map((data,index)=>(
-                        <Text key={index} style={{margin:10,fontSize:16,textAlign:'center',fontWeight:'bold'}}>
-                            * {data.rule}
-                        </Text>
-                    ))}
-                </View>
-                <TouchableOpacity style={styles.add} onPress={()=> alert('Please contact 78199902934')}>
-                    <Text style={[styles.regis]}>Add Venue</Text>
-                </TouchableOpacity>
-                <Text style={{margin:10,fontSize:20,textAlign:'center',fontWeight:'bold'}}>~After Adding the Venue, it will be verified and then added to the
-                    main page for users to book slots and participate.~
-                </Text>
-            </View>
-            
-        </ScrollView>
+    <SafeAreaView style={styles.screen}>
+      <Appbar.BackAction onPress={() => navigation.goBack()} />
+
+      <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
+        <Text style={styles.head}>
+          Welcome to the <Text style={{ color: 'maroon', fontSize: 40 }}>Admin</Text> ~page~
+        </Text>
+
+        <View style={styles.card}>
+          <Text style={styles.regis}>*Process of Registration*</Text>
+
+          {rules.map((data, index) => (
+            <Text key={index} style={styles.ruleText}>
+              • {data.rule}
+            </Text>
+          ))}
+        </View>
+
+        <TouchableOpacity style={styles.add} onPress={() => alert('Please contact 78199902934')}>
+          <Text style={styles.regis}>Add Venue</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.footer}>
+          ~After Adding the Venue, it will be verified and then added to the main page for users to
+          book slots and participate.~
+        </Text>
+      </ScrollView>
     </SafeAreaView>
-  )
+  );
 }
+
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
+    backgroundColor: '#fff'
+  },
+  scrollContainer: {
+    paddingVertical: 20,
+    paddingHorizontal: 14,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop:10
+    gap: 25
   },
   head: {
-    fontSize:30,
+    fontSize: 30,
     fontWeight: 'bold',
-    textAlign:'center',
-    marginBottom:20
+    textAlign: 'center'
   },
   card: {
-    width:380,
-    height:450,
+    width: '92%',
     backgroundColor: 'lightgrey',
-    borderRadius:10,
-    alignItems:'center',
-    marginTop:30
+    borderRadius: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    gap: 12
   },
   regis: {
-    fontSize:20,
-    textAlign:'center',
-    margin:10,
-    color:'maroon',
-    fontWeight:'bold'
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'maroon',
+    fontWeight: 'bold'
+  },
+  ruleText: {
+    marginVertical: 6,
+    fontSize: 16,
+    textAlign: 'center',
+    fontWeight: 'bold'
   },
   add: {
-    width:150,
-    height:50,
-    backgroundColor:'grey',
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:10,
-    marginTop:20,
-    borderWidth:2,
-    borderColor:'black'
+    width: 160,
+    height: 50,
+    backgroundColor: 'grey',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginTop: 10,
+    borderWidth: 2,
+    borderColor: 'black'
+  },
+  footer: {
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    paddingHorizontal: 10,
+    marginBottom: 20
   }
-})
+});

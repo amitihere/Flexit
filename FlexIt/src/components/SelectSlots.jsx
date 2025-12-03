@@ -135,142 +135,142 @@ const handleTimeSelect = (time) => {
         
       
   )
-}
-const styles = StyleSheet.create({
+}const styles = StyleSheet.create({
   card: {
-    width:80,
-    height:80,
+    width: width * 0.20,
+    height: height * 0.11,
     backgroundColor: '#373836ff',
-    borderRadius:10,
-    justifyContent:'center',
-    alignItems:'center',
-    margin:5
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 6,
+    marginVertical: 8,
   },
-  cardSelect:{
-    width:80,
-    height:80,
+  cardSelect: {
+    width: width * 0.20,
+    height: height * 0.11,
     backgroundColor: '#a8ae8cff',
-    borderRadius:10,
-    justifyContent:'center',
-    alignItems:'center',
-    margin:5
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 6,
+    marginVertical: 8,
   },
   text: {
-    fontWeight:'bold'
+    fontWeight: 'bold',
+    fontSize: width * 0.04,
+    color: 'white',
   },
-  textSelect : {
-    fontWeight:'bold',
-    color:'white'
+  textSelect: {
+    fontWeight: 'bold',
+    fontSize: width * 0.04,
+    color: 'white',
   },
   day: {
-    fontWeight:'bold',
-    fontSize:20,
-    color:'#787a55ff'
+    fontWeight: 'bold',
+    fontSize: width * 0.045,
+    color: '#787a55ff',
   },
   daySelect: {
-    fontWeight:'bold',
-    fontSize:20,
-    color:'#0a0a0aff'
+    fontWeight: 'bold',
+    fontSize: width * 0.045,
+    color: '#0a0a0aff',
   },
   sportText: {
     color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: width * 0.040,
-    letterSpacing: 0.5,
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
-    textShadowRadius: 2,
+    fontSize: width * 0.045,
     paddingTop: height * 0.03,
+    marginBottom: height * 0.01,
+    letterSpacing: 0.4,
   },
-  avail:{
-  backgroundColor: '#363c3cff',
-  width:width*0.55,
-  height: height * 0.08,
-  opacity:0.9,
-  marginVertical:10,
-  borderRadius:12,
-  alignItems:'center',
-  justifyContent:'center'
-},
-availSelect:{
-  backgroundColor: '#0a0a0aff',
-  width:width*0.55,
-  height: height * 0.08,
-  opacity:0.9,
-  marginVertical:10,
-  borderRadius:12,
-  alignItems:'center',
-  justifyContent:'center'
-},
-sport:{
-  color:'#ddd8d6ff',
-  marginTop:5,
-  textAlign:'center',
-},
-maintain:{
-  alignItems:'center',
-  overflow:'hidden'
-},
-divider: {
-    height: 1,
+  avail: {
+    backgroundColor: '#363c3cff',
+    width: width * 0.75,
+    height: height * 0.085,
+    marginVertical: 8,
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+  },
+  availSelect: {
+    backgroundColor: '#0a0a0aff',
+    width: width * 0.75,
+    height: height * 0.085,
+    marginVertical: 8,
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+  },
+  sport: {
+    color: '#ddd8d6ff',
+    marginTop: 5,
+    fontSize: width * 0.04,
+    textAlign: 'center',
+  },
+  maintain: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  divider: {
+    height: 1.2,
     backgroundColor: '#a09e9eff',
-    width: '95%',
+    width: '92%',
     alignSelf: 'center',
-    marginVertical: height * 0.01,
-    opacity: 0.7,
+    marginVertical: height * 0.015,
+    opacity: 0.6,
   },
-court: {
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginTop: 15,
-},
-block: {
-  backgroundColor: '#363c3cff',
-  width:width*0.40,
-  height: height * 0.08,
-  opacity:0.9,
-  margin:10,
-  borderRadius:12,
-  alignItems:'center',
-  justifyContent:'center'
-},
-blockSelect:{
-  backgroundColor: '#0a0a0aff',
-  width:width*0.40,
-  height: height * 0.08,
-  opacity:0.9,
-  margin:10,
-  borderRadius:12,
-  alignItems:'center',
-  justifyContent:'center'
-},
-payBtn: {
-  backgroundColor: '#a8ae8cff',
-  width: width *0.40,
-  height: height * 0.08,
-  marginTop: 15,
-  marginBottom: 40,
-  borderRadius: 12,
-  alignSelf:'center',
-  justifyContent:'center'
-},
-payText: {
-  color: 'white',
-  fontSize: width * 0.040,
-  fontWeight: 'bold',
-  textAlign:'center'
-},
-payContainer: {
-  position: 'absolute',
-  bottom: 20,
-  left: 0,
-  right: 0,
-  alignItems: 'center',
-  zIndex: 10
-}
-
-
-
-})
+  court: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    rowGap: height * 0.01,
+  },
+  block: {
+    backgroundColor: '#363c3cff',
+    width: width * 0.42,
+    height: height * 0.085,
+    marginHorizontal: 8,
+    marginVertical: 10,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 6,
+  },
+  blockSelect: {
+    backgroundColor: '#0a0a0aff',
+    width: width * 0.42,
+    height: height * 0.085,
+    marginHorizontal: 8,
+    marginVertical: 10,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 6,
+  },
+  payBtn: {
+    backgroundColor: '#a8ae8cff',
+    width: width * 0.45,
+    height: height * 0.085,
+    marginVertical: height * 0.03,
+    borderRadius: 15,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.35,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  payText: {
+    color: 'white',
+    fontSize: width * 0.045,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
+});

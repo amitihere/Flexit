@@ -24,7 +24,7 @@ const DropDown = ({ value, setValue }) => {
         labelField="label"
         valueField="value"
         value={value}
-        placeholder="Choose a City"
+        placeholder="Choose a State"
         searchPlaceholder="Search..."
         
         onChange={(item) => {
