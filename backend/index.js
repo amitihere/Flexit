@@ -46,16 +46,16 @@ app.post('/signup', async (req,res)=>{
 
 
 app.post('/login', async (req,res)=>{
-    const {name,password} = req.body;
+    const {email,password} = req.body;
 
-    if(!name || !password){
+    if(!email || !password){
         return res.status(404).json({message: 'Insufficient data'})
     }
 
     
     const users = await prisma.user.findFirst({
         where: 
-                {name:name}
+                {email:email}
     })
     if (!users) {
         return res.status(404).json({ message: 'User not found' });
