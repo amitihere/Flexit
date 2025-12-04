@@ -13,7 +13,7 @@ export default function CompData() {
       state: 'Delhi',
       venue: 'Indira Indoor Stadium,',
       competitionStart: '25th June',
-      contact: '9876543201'
+      contact: '9876543200'
     },
     {
       id: 2,
