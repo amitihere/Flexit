@@ -29,7 +29,7 @@ app.post('/signup', async (req,res)=>{
             ]
         }
     })
-    if(users) return res.status(404).json({message: 'Already exists'})
+    if(users) return res.status(404).json({message: 'Given data already exists'})
 
     const hashedPass = await bcrypt.hash(password,salt)
 
@@ -40,7 +40,6 @@ app.post('/signup', async (req,res)=>{
             password:hashedPass
         }
     })
-    console.log(userSend)
     if(userSend) return res.status(200).json({message:'Successfully created'})
 })
 
@@ -51,7 +50,6 @@ app.post('/login', async (req,res)=>{
     if(!email || !password){
         return res.status(404).json({message: 'Insufficient data'})
     }
-
     
     const users = await prisma.user.findFirst({
         where: 
